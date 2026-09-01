@@ -112,9 +112,13 @@
         }
     </script>
     <style>
-        /* ─── INITIAL LOAD: hide everything until orchestrated reveal ─── */
-        .hero-init { opacity: 0; }
-        .nav-init { transform: translateY(-100%); }
+        .hero-init {
+            opacity: 0;
+        }
+
+        .nav-init {
+            transform: translateY(-100%);
+        }
 
         /* ─── Logo cascade entrance ─── */
         .cascade-init {
@@ -128,16 +132,19 @@
             height: 10px;
             background: #38bdf8;
             border-radius: 50%;
-            box-shadow: 0 0 12px rgba(56,189,248,0.8), 0 0 30px rgba(56,189,248,0.3);
+            box-shadow: 0 0 12px rgba(56, 189, 248, 0.8), 0 0 30px rgba(56, 189, 248, 0.3);
         }
+
         .logo-divider {
             color: #38bdf8;
-            text-shadow: 0 0 10px rgba(56,189,248,0.8), 0 0 30px rgba(56,189,248,0.3);
+            text-shadow: 0 0 10px rgba(56, 189, 248, 0.8), 0 0 30px rgba(56, 189, 248, 0.3);
         }
+
         .logo-orbit-container {
             animation: orbit 8s linear infinite;
             transform-origin: center center;
         }
+
         .logo-swoosh {
             position: absolute;
             bottom: -2px;
@@ -185,14 +192,12 @@
         /* ─── Animated gradient text ─── */
         .gradient-flow-text {
             background-size: 300% 100%;
-            background-image: linear-gradient(
-                90deg,
-                #7dd3fc 0%,
-                #38bdf8 25%,
-                #22d3ee 50%,
-                #38bdf8 75%,
-                #7dd3fc 100%
-            );
+            background-image: linear-gradient(90deg,
+                    #7dd3fc 0%,
+                    #38bdf8 25%,
+                    #22d3ee 50%,
+                    #38bdf8 75%,
+                    #7dd3fc 100%);
             -webkit-background-clip: text;
             background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -206,18 +211,36 @@
             animation: blink 0.6s step-end infinite;
             margin-left: 2px;
         }
+
         @keyframes blink {
-            50% { opacity: 0; }
+            50% {
+                opacity: 0;
+            }
         }
 
         /* ─── Scrollbar ─── */
-        ::-webkit-scrollbar { width: 6px; }
-        ::-webkit-scrollbar-track { background: #030712; }
-        ::-webkit-scrollbar-thumb { background: #38bdf8; border-radius: 3px; }
-        ::-webkit-scrollbar-thumb:hover { background: #0ea5e9; }
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #030712;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #38bdf8;
+            border-radius: 3px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #0ea5e9;
+        }
 
         /* ─── AI Brain glow ─── */
-        .ai-brain-container { position: relative; }
+        .ai-brain-container {
+            position: relative;
+        }
+
         .ai-brain-container::before {
             content: '';
             position: absolute;
@@ -227,7 +250,13 @@
         }
 
         /* ─── Particles ─── */
-        .particles { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
+        .particles {
+            position: absolute;
+            inset: 0;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
         .particle {
             position: absolute;
             width: 2px;
@@ -240,10 +269,11 @@
         .journey-line-bg {
             background: rgba(56, 189, 248, 0.08);
         }
+
         .journey-line-fill {
             background: linear-gradient(90deg,
-                rgba(56, 189, 248, 0.8),
-                rgba(34, 211, 238, 0.6));
+                    rgba(56, 189, 248, 0.8),
+                    rgba(34, 211, 238, 0.6));
             width: 0%;
             transition: none;
         }
@@ -252,11 +282,13 @@
         .step-node {
             transition: box-shadow 0.5s ease, border-color 0.5s ease, background-color 0.5s ease;
         }
+
         .step-node.lit {
             border-color: rgba(56, 189, 248, 0.8) !important;
             box-shadow: 0 0 25px rgba(56, 189, 248, 0.5), 0 0 60px rgba(56, 189, 248, 0.15) !important;
             background-color: rgba(56, 189, 248, 0.08) !important;
         }
+
         .step-active-permanent {
             border-color: #38bdf8 !important;
             box-shadow: 0 0 25px rgba(56, 189, 248, 0.5), 0 0 60px rgba(56, 189, 248, 0.2) !important;
@@ -266,9 +298,9 @@
         /* ─── Shimmer bar ─── */
         .shimmer-bg {
             background: linear-gradient(90deg,
-                transparent 0%,
-                rgba(56, 189, 248, 0.05) 50%,
-                transparent 100%);
+                    transparent 0%,
+                    rgba(56, 189, 248, 0.05) 50%,
+                    transparent 100%);
             background-size: 200% 100%;
             animation: shimmer 3s linear infinite;
         }
@@ -278,21 +310,29 @@
             transform: translateX(100%);
             transition: transform 0.3s ease-in-out;
         }
-        .mobile-menu.open { transform: translateX(0); }
+
+        .mobile-menu.open {
+            transform: translateX(0);
+        }
 
         /* ─── Corner accent for cards ─── */
         .corner-accent::before {
             content: '';
             position: absolute;
-            top: 0; left: 0;
-            width: 40px; height: 1px;
+            top: 0;
+            left: 0;
+            width: 40px;
+            height: 1px;
             background: linear-gradient(90deg, rgba(56, 189, 248, 0.8), transparent);
         }
+
         .corner-accent::after {
             content: '';
             position: absolute;
-            top: 0; left: 0;
-            width: 1px; height: 40px;
+            top: 0;
+            left: 0;
+            width: 1px;
+            height: 40px;
             background: linear-gradient(180deg, rgba(56, 189, 248, 0.8), transparent);
         }
 
@@ -301,6 +341,7 @@
             transform-style: preserve-3d;
             transition: transform 0.15s ease-out;
         }
+
         .tilt-card .tilt-inner {
             transform: translateZ(30px);
         }
@@ -309,34 +350,58 @@
         .magnetic-btn {
             transition: transform 0.2s ease-out;
         }
+
         .magnetic-btn .btn-glow {
             position: absolute;
             inset: -2px;
             border-radius: inherit;
             background: radial-gradient(circle at var(--glow-x, 50%) var(--glow-y, 50%),
-                rgba(56, 189, 248, 0.5) 0%,
-                transparent 70%);
+                    rgba(56, 189, 248, 0.5) 0%,
+                    transparent 70%);
             opacity: 0;
             transition: opacity 0.3s ease;
             pointer-events: none;
             z-index: 0;
         }
-        .magnetic-btn:hover .btn-glow { opacity: 1; }
+
+        .magnetic-btn:hover .btn-glow {
+            opacity: 1;
+        }
 
         /* ─── Word reveal helper ─── */
-        .word-reveal { display: inline-block; opacity: 0; transform: translateY(18px); }
+        .word-reveal {
+            display: inline-block;
+            opacity: 0;
+            transform: translateY(18px);
+        }
 
         /* ─── prefers-reduced-motion ─── */
         @media (prefers-reduced-motion: reduce) {
-            *, *::before, *::after {
+
+            *,
+            *::before,
+            *::after {
                 animation-duration: 0.01ms !important;
                 animation-iteration-count: 1 !important;
                 transition-duration: 0.01ms !important;
             }
-            .gradient-flow-text { animation: none !important; }
-            .hero-init { opacity: 1 !important; }
-            .nav-init { transform: none !important; }
-            .glass-bloom { opacity: 1 !important; backdrop-filter: blur(12px) !important; }
+
+            .gradient-flow-text {
+                animation: none !important;
+            }
+
+            .hero-init {
+                opacity: 1 !important;
+            }
+
+            .nav-init {
+                transform: none !important;
+            }
+
+            .glass-bloom {
+                opacity: 1 !important;
+                backdrop-filter: blur(12px) !important;
+            }
         }
     </style>
 </head>
@@ -366,11 +431,16 @@
                 <div class="hidden lg:flex items-center gap-8 font-heading text-[0.8rem] uppercase tracking-[0.15em]"
                     id="nav-links">
                     <a href="#" class="text-sky-400 transition-colors duration-300 nav-link">Home</a>
-                    <a href="#domains" class="text-gray-400 hover:text-sky-400 transition-colors duration-300 nav-link">Problems</a>
-                    <a href="#journey" class="text-gray-400 hover:text-sky-400 transition-colors duration-300 nav-link">Timeline</a>
-                    <a href="#rules" class="text-gray-400 hover:text-sky-400 transition-colors duration-300 nav-link">Rules</a>
-                    <a href="#" class="text-gray-400 hover:text-sky-400 transition-colors duration-300 nav-link">Shortlist</a>
-                    <a href="#" class="text-gray-400 hover:text-sky-400 transition-colors duration-300 nav-link">Grand Finale</a>
+                    <a href="#domains"
+                        class="text-gray-400 hover:text-sky-400 transition-colors duration-300 nav-link">Problems</a>
+                    <a href="#journey"
+                        class="text-gray-400 hover:text-sky-400 transition-colors duration-300 nav-link">Timeline</a>
+                    <a href="#rules"
+                        class="text-gray-400 hover:text-sky-400 transition-colors duration-300 nav-link">Rules</a>
+                    <a href="#"
+                        class="text-gray-400 hover:text-sky-400 transition-colors duration-300 nav-link">Shortlist</a>
+                    <a href="#" class="text-gray-400 hover:text-sky-400 transition-colors duration-300 nav-link">Grand
+                        Finale</a>
                 </div>
 
                 <!-- Auth Actions -->
@@ -385,9 +455,14 @@
 
                 <!-- Mobile Hamburger -->
                 <button id="menu-toggle" class="lg:hidden flex flex-col gap-1.5 p-2 group" aria-label="Toggle Menu">
-                    <span class="block w-6 h-0.5 bg-sky-400 group-hover:bg-white transition-all duration-300 origin-center" id="bar1"></span>
-                    <span class="block w-4 h-0.5 bg-sky-400 group-hover:bg-white transition-all duration-300 ml-auto" id="bar2"></span>
-                    <span class="block w-6 h-0.5 bg-sky-400 group-hover:bg-white transition-all duration-300 origin-center" id="bar3"></span>
+                    <span
+                        class="block w-6 h-0.5 bg-sky-400 group-hover:bg-white transition-all duration-300 origin-center"
+                        id="bar1"></span>
+                    <span class="block w-4 h-0.5 bg-sky-400 group-hover:bg-white transition-all duration-300 ml-auto"
+                        id="bar2"></span>
+                    <span
+                        class="block w-6 h-0.5 bg-sky-400 group-hover:bg-white transition-all duration-300 origin-center"
+                        id="bar3"></span>
                 </button>
             </div>
         </div>
@@ -396,11 +471,17 @@
         <div id="mobile-menu"
             class="mobile-menu fixed top-[72px] right-0 h-[calc(100vh-72px)] w-72 glass border-l border-sky-500/10 flex flex-col p-8 gap-6 lg:hidden z-50">
             <a href="#" class="font-heading text-sky-400 uppercase tracking-widest text-sm">Home</a>
-            <a href="#domains" class="font-heading text-gray-400 hover:text-sky-400 uppercase tracking-widest text-sm transition-colors">Problems</a>
-            <a href="#journey" class="font-heading text-gray-400 hover:text-sky-400 uppercase tracking-widest text-sm transition-colors">Timeline</a>
-            <a href="#rules" class="font-heading text-gray-400 hover:text-sky-400 uppercase tracking-widest text-sm transition-colors">Rules</a>
-            <a href="#" class="font-heading text-gray-400 hover:text-sky-400 uppercase tracking-widest text-sm transition-colors">Shortlist</a>
-            <a href="#" class="font-heading text-gray-400 hover:text-sky-400 uppercase tracking-widest text-sm transition-colors">Grand Finale</a>
+            <a href="#domains"
+                class="font-heading text-gray-400 hover:text-sky-400 uppercase tracking-widest text-sm transition-colors">Problems</a>
+            <a href="#journey"
+                class="font-heading text-gray-400 hover:text-sky-400 uppercase tracking-widest text-sm transition-colors">Timeline</a>
+            <a href="#rules"
+                class="font-heading text-gray-400 hover:text-sky-400 uppercase tracking-widest text-sm transition-colors">Rules</a>
+            <a href="#"
+                class="font-heading text-gray-400 hover:text-sky-400 uppercase tracking-widest text-sm transition-colors">Shortlist</a>
+            <a href="#"
+                class="font-heading text-gray-400 hover:text-sky-400 uppercase tracking-widest text-sm transition-colors">Grand
+                Finale</a>
             <hr class="border-sky-500/10 my-2">
             <a href="#" class="font-heading text-gray-300 text-sm tracking-wide">Login</a>
             <a href="#"
@@ -417,18 +498,27 @@
     <section class="relative min-h-screen flex items-center justify-center pt-[72px] overflow-hidden" id="hero-section">
 
         <!-- Ambient glow orbs (zero-gravity float) -->
-        <div class="absolute top-20 left-10 w-[500px] h-[500px] bg-sky-500/[0.07] rounded-full blur-[120px] pointer-events-none orb-float" data-speed="0.6"></div>
-        <div class="absolute bottom-20 right-10 w-[400px] h-[400px] bg-cyan-400/[0.05] rounded-full blur-[100px] pointer-events-none orb-float" data-speed="0.8"></div>
-        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-sky-500/[0.03] rounded-full blur-[150px] pointer-events-none orb-float" data-speed="0.4"></div>
+        <div class="absolute top-20 left-10 w-[500px] h-[500px] bg-sky-500/[0.07] rounded-full blur-[120px] pointer-events-none orb-float"
+            data-speed="0.6"></div>
+        <div class="absolute bottom-20 right-10 w-[400px] h-[400px] bg-cyan-400/[0.05] rounded-full blur-[100px] pointer-events-none orb-float"
+            data-speed="0.8"></div>
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-sky-500/[0.03] rounded-full blur-[150px] pointer-events-none orb-float"
+            data-speed="0.4"></div>
 
         <!-- Floating particles -->
         <div class="particles">
-            <div class="particle animate-particle" style="left:10%;bottom:0;animation-delay:0s;animation-duration:8s"></div>
-            <div class="particle animate-particle" style="left:25%;bottom:0;animation-delay:1.5s;animation-duration:7s"></div>
-            <div class="particle animate-particle" style="left:45%;bottom:0;animation-delay:3s;animation-duration:9s"></div>
-            <div class="particle animate-particle" style="left:65%;bottom:0;animation-delay:0.5s;animation-duration:6s"></div>
-            <div class="particle animate-particle" style="left:80%;bottom:0;animation-delay:2s;animation-duration:8s"></div>
-            <div class="particle animate-particle" style="left:92%;bottom:0;animation-delay:4s;animation-duration:7s"></div>
+            <div class="particle animate-particle" style="left:10%;bottom:0;animation-delay:0s;animation-duration:8s">
+            </div>
+            <div class="particle animate-particle" style="left:25%;bottom:0;animation-delay:1.5s;animation-duration:7s">
+            </div>
+            <div class="particle animate-particle" style="left:45%;bottom:0;animation-delay:3s;animation-duration:9s">
+            </div>
+            <div class="particle animate-particle" style="left:65%;bottom:0;animation-delay:0.5s;animation-duration:6s">
+            </div>
+            <div class="particle animate-particle" style="left:80%;bottom:0;animation-delay:2s;animation-duration:8s">
+            </div>
+            <div class="particle animate-particle" style="left:92%;bottom:0;animation-delay:4s;animation-duration:7s">
+            </div>
         </div>
 
         <!-- ── Centered Vertical Stack ── -->
@@ -441,97 +531,118 @@
                 <div class="flex items-baseline justify-center gap-0" style="font-family:'Space Grotesk',sans-serif;">
 
                     <!-- ── "A" with sweeping sky-blue swoosh ── -->
-                    <span class="relative inline-block font-bold text-white text-[4.5rem] sm:text-[6rem] md:text-[7.5rem] leading-none" style="letter-spacing:-0.02em;">
+                    <span
+                        class="relative inline-block font-bold text-white text-[4.5rem] sm:text-[6rem] md:text-[7.5rem] leading-none"
+                        style="letter-spacing:-0.02em;">
                         A
                         <!-- SVG swoosh overlay across bottom-left of A -->
-                        <svg class="logo-swoosh" width="110" height="45" viewBox="0 0 110 45" fill="none" xmlns="http://www.w3.org/2000/svg"
-                            style="width:110%;height:auto;bottom:-4px;left:-12%;">
+                        <svg class="logo-swoosh" width="110" height="45" viewBox="0 0 110 45" fill="none"
+                            xmlns="http://www.w3.org/2000/svg" style="width:110%;height:auto;bottom:-4px;left:-12%;">
                             <defs>
                                 <linearGradient id="swooshGrad" x1="0%" y1="50%" x2="100%" y2="50%">
-                                    <stop offset="0%" stop-color="#0ea5e9" stop-opacity="0.9"/>
-                                    <stop offset="50%" stop-color="#38bdf8" stop-opacity="0.85"/>
-                                    <stop offset="100%" stop-color="#7dd3fc" stop-opacity="0"/>
+                                    <stop offset="0%" stop-color="#0ea5e9" stop-opacity="0.9" />
+                                    <stop offset="50%" stop-color="#38bdf8" stop-opacity="0.85" />
+                                    <stop offset="100%" stop-color="#7dd3fc" stop-opacity="0" />
                                 </linearGradient>
                             </defs>
                             <path d="M0 38 C10 28, 20 12, 40 10 C60 8, 75 18, 90 26 C98 30, 105 35, 110 40"
-                                  stroke="url(#swooshGrad)" stroke-width="4.5" fill="none" stroke-linecap="round"/>
+                                stroke="url(#swooshGrad)" stroke-width="4.5" fill="none" stroke-linecap="round" />
                             <path d="M0 42 C15 32, 25 18, 45 15 C62 12, 78 22, 95 30 C102 34, 108 38, 110 42"
-                                  stroke="url(#swooshGrad)" stroke-width="2.5" fill="none" stroke-linecap="round" opacity="0.4"/>
+                                stroke="url(#swooshGrad)" stroke-width="2.5" fill="none" stroke-linecap="round"
+                                opacity="0.4" />
                         </svg>
                     </span>
 
                     <!-- ── "i" with glowing dot ── -->
-                    <span class="relative inline-block text-white text-[3rem] sm:text-[4rem] md:text-[5rem] font-bold leading-none" style="margin-left:-0.08em;margin-right:0.02em;">
+                    <span
+                        class="relative inline-block text-white text-[3rem] sm:text-[4rem] md:text-[5rem] font-bold leading-none"
+                        style="margin-left:-0.08em;margin-right:0.02em;">
                         <!-- Glowing dot replacing the tittle -->
-                        <span class="absolute animate-pulse-dot" style="top:-0.05em;left:50%;transform:translateX(-50%);">
+                        <span class="absolute animate-pulse-dot"
+                            style="top:-0.05em;left:50%;transform:translateX(-50%);">
                             <span class="block logo-i-dot" style="width:12px;height:12px;"></span>
                         </span>
                         <!-- The i body (dotless) -->
                         <span style="visibility:hidden;">i</span>
-                        <span class="absolute bottom-0 left-1/2 -translate-x-1/2 text-white" style="line-height:inherit;">
+                        <span class="absolute bottom-0 left-1/2 -translate-x-1/2 text-white"
+                            style="line-height:inherit;">
                             <svg width="12" height="48" viewBox="0 0 12 60" class="sm:hidden">
-                                <rect x="2" y="0" width="8" height="42" rx="2" fill="white"/>
+                                <rect x="2" y="0" width="8" height="42" rx="2" fill="white" />
                             </svg>
                         </span>
                         <!-- Visible lowercase i without dot (rendered as character) -->
                         <span class="absolute inset-0 flex items-end justify-center" aria-hidden="true"
-                              style="font-size:inherit;line-height:inherit;color:transparent;-webkit-text-stroke:0px;">
+                            style="font-size:inherit;line-height:inherit;color:transparent;-webkit-text-stroke:0px;">
                         </span>
                         <span style="color:white;visibility:visible;position:relative;z-index:1;">ı</span>
                     </span>
 
                     <!-- ── "TH" ── -->
-                    <span class="inline-block font-bold text-white text-[4.5rem] sm:text-[6rem] md:text-[7.5rem] leading-none tracking-tight">TH</span>
+                    <span
+                        class="inline-block font-bold text-white text-[4.5rem] sm:text-[6rem] md:text-[7.5rem] leading-none tracking-tight">TH</span>
 
                     <!-- ── "O" with 3D ribbon + orbiting satellites ── -->
-                    <span class="relative inline-block font-bold text-white text-[4.5rem] sm:text-[6rem] md:text-[7.5rem] leading-none">
+                    <span
+                        class="relative inline-block font-bold text-white text-[4.5rem] sm:text-[6rem] md:text-[7.5rem] leading-none">
                         O
                         <!-- Inner 3D-like blue ribbon shadow -->
-                        <svg class="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 100 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <svg class="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 100 120"
+                            fill="none" xmlns="http://www.w3.org/2000/svg">
                             <defs>
                                 <linearGradient id="ribbonGrad" x1="20%" y1="0%" x2="80%" y2="100%">
-                                    <stop offset="0%" stop-color="#0284c7" stop-opacity="0.9"/>
-                                    <stop offset="50%" stop-color="#38bdf8" stop-opacity="0.7"/>
-                                    <stop offset="100%" stop-color="#0ea5e9" stop-opacity="0.5"/>
+                                    <stop offset="0%" stop-color="#0284c7" stop-opacity="0.9" />
+                                    <stop offset="50%" stop-color="#38bdf8" stop-opacity="0.7" />
+                                    <stop offset="100%" stop-color="#0ea5e9" stop-opacity="0.5" />
                                 </linearGradient>
                             </defs>
                             <!-- 3D ribbon crescent inside the O -->
-                            <path d="M35 30 C30 45, 28 70, 38 90 C42 96, 48 98, 50 95 C42 80, 40 55, 45 35 C46 32, 40 28, 35 30Z"
-                                  fill="url(#ribbonGrad)" opacity="0.6"/>
-                            <path d="M60 28 C65 42, 68 68, 58 88 C55 93, 50 95, 48 92 C56 78, 58 52, 54 33 C53 30, 57 26, 60 28Z"
-                                  fill="url(#ribbonGrad)" opacity="0.35"/>
+                            <path
+                                d="M35 30 C30 45, 28 70, 38 90 C42 96, 48 98, 50 95 C42 80, 40 55, 45 35 C46 32, 40 28, 35 30Z"
+                                fill="url(#ribbonGrad)" opacity="0.6" />
+                            <path
+                                d="M60 28 C65 42, 68 68, 58 88 C55 93, 50 95, 48 92 C56 78, 58 52, 54 33 C53 30, 57 26, 60 28Z"
+                                fill="url(#ribbonGrad)" opacity="0.35" />
                         </svg>
 
                         <!-- Orbiting satellites ring -->
-                        <span class="absolute pointer-events-none" style="top:50%;left:50%;transform:translate(-50%,-50%);width:140%;height:140%;">
-                            <svg viewBox="0 0 140 140" class="w-full h-full logo-orbit-container" xmlns="http://www.w3.org/2000/svg">
+                        <span class="absolute pointer-events-none"
+                            style="top:50%;left:50%;transform:translate(-50%,-50%);width:140%;height:140%;">
+                            <svg viewBox="0 0 140 140" class="w-full h-full logo-orbit-container"
+                                xmlns="http://www.w3.org/2000/svg">
                                 <!-- Orbit ring path -->
-                                <circle cx="70" cy="70" r="62" fill="none" stroke="rgba(56,189,248,0.2)" stroke-width="0.8" stroke-dasharray="4 6"/>
+                                <circle cx="70" cy="70" r="62" fill="none" stroke="rgba(56,189,248,0.2)"
+                                    stroke-width="0.8" stroke-dasharray="4 6" />
                                 <!-- Satellite dot 1 (top) -->
                                 <circle cx="70" cy="8" r="4.5" fill="#38bdf8">
-                                    <animate attributeName="opacity" values="1;0.5;1" dur="2s" repeatCount="indefinite"/>
+                                    <animate attributeName="opacity" values="1;0.5;1" dur="2s"
+                                        repeatCount="indefinite" />
                                 </circle>
                                 <!-- Satellite dot 2 (bottom-right offset) -->
                                 <circle cx="125" cy="85" r="3" fill="#0ea5e9">
-                                    <animate attributeName="opacity" values="0.8;0.3;0.8" dur="2.5s" repeatCount="indefinite"/>
+                                    <animate attributeName="opacity" values="0.8;0.3;0.8" dur="2.5s"
+                                        repeatCount="indefinite" />
                                 </circle>
                                 <!-- Small accent dot -->
                                 <circle cx="20" cy="110" r="2" fill="#7dd3fc" opacity="0.6">
-                                    <animate attributeName="opacity" values="0.6;0.2;0.6" dur="3s" repeatCount="indefinite"/>
+                                    <animate attributeName="opacity" values="0.6;0.2;0.6" dur="3s"
+                                        repeatCount="indefinite" />
                                 </circle>
                             </svg>
                         </span>
                     </span>
 
                     <!-- ── "N" ── -->
-                    <span class="inline-block font-bold text-white text-[4.5rem] sm:text-[6rem] md:text-[7.5rem] leading-none tracking-tight">N</span>
+                    <span
+                        class="inline-block font-bold text-white text-[4.5rem] sm:text-[6rem] md:text-[7.5rem] leading-none tracking-tight">N</span>
 
                     <!-- ── Glowing Divider "|" ── -->
-                    <span class="inline-block logo-divider animate-pulse-dot font-light text-[3.5rem] sm:text-[5rem] md:text-[6rem] leading-none mx-3 sm:mx-4 md:mx-5 select-none" aria-hidden="true"
-                          style="opacity:0.9;">|</span>
+                    <span
+                        class="inline-block logo-divider animate-pulse-dot font-light text-[3.5rem] sm:text-[5rem] md:text-[6rem] leading-none mx-3 sm:mx-4 md:mx-5 select-none"
+                        aria-hidden="true" style="opacity:0.9;">|</span>
 
                     <!-- ── "2.0" ── -->
-                    <span class="inline-block font-bold text-white text-[4rem] sm:text-[5.5rem] md:text-[7rem] leading-none tracking-tight">2.0</span>
+                    <span
+                        class="inline-block font-bold text-white text-[4rem] sm:text-[5.5rem] md:text-[7rem] leading-none tracking-tight">2.0</span>
 
                 </div>
             </div>
@@ -566,15 +677,13 @@
             </p>
 
             <!-- ── CTA Buttons ── -->
-            <div class="cascade-init flex flex-col sm:flex-row gap-4 justify-center mb-14"
-                id="hero-ctas">
+            <div class="cascade-init flex flex-col sm:flex-row gap-4 justify-center mb-14" id="hero-ctas">
                 <!-- Magnetic Register Button -->
                 <button
                     class="magnetic-btn group relative px-8 py-4 font-heading font-bold text-black bg-sky-400 rounded-lg overflow-hidden hover:scale-[1.03] transition-colors duration-300 shadow-[0_0_25px_rgba(56,189,248,0.4)]"
                     id="register-btn">
                     <div class="btn-glow rounded-lg"></div>
-                    <span
-                        class="relative z-10 flex items-center justify-center gap-2 uppercase tracking-wider text-sm">
+                    <span class="relative z-10 flex items-center justify-center gap-2 uppercase tracking-wider text-sm">
                         Register Team
                         <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none"
                             stroke="currentColor" viewBox="0 0 24 24">
@@ -606,15 +715,19 @@
                 <!-- Stats Row -->
                 <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 mb-8">
                     <div class="glass-card rounded-xl px-4 py-5 flex flex-col items-center">
-                        <span class="font-heading text-2xl md:text-3xl font-bold text-white counter" data-target="1200">0</span>
-                        <span class="text-gray-500 text-xs uppercase tracking-wider mt-1 font-heading">Participants</span>
+                        <span class="font-heading text-2xl md:text-3xl font-bold text-white counter"
+                            data-target="1200">0</span>
+                        <span
+                            class="text-gray-500 text-xs uppercase tracking-wider mt-1 font-heading">Participants</span>
                     </div>
                     <div class="glass-card rounded-xl px-4 py-5 flex flex-col items-center">
-                        <span class="font-heading text-2xl md:text-3xl font-bold text-white counter" data-target="300">0</span>
+                        <span class="font-heading text-2xl md:text-3xl font-bold text-white counter"
+                            data-target="300">0</span>
                         <span class="text-gray-500 text-xs uppercase tracking-wider mt-1 font-heading">Projects</span>
                     </div>
                     <div class="glass-card rounded-xl px-4 py-5 flex flex-col items-center">
-                        <span class="font-heading text-2xl md:text-3xl font-bold text-white counter" data-target="50">0</span>
+                        <span class="font-heading text-2xl md:text-3xl font-bold text-white counter"
+                            data-target="50">0</span>
                         <span class="text-gray-500 text-xs uppercase tracking-wider mt-1 font-heading">Mentors</span>
                     </div>
                     <div class="glass-card rounded-xl px-4 py-5 flex flex-col items-center">
@@ -628,14 +741,16 @@
                     <div class="flex items-center gap-2">
                         <svg class="w-4 h-4 text-sky-400/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                                d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                                d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
+                            </path>
                         </svg>
                         <span>20 – 22 Dec, 2025</span>
                     </div>
                     <div class="flex items-center gap-2">
                         <svg class="w-4 h-4 text-sky-400/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z">
+                            </path>
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
                                 d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
                         </svg>
@@ -644,7 +759,8 @@
                     <div class="flex items-center gap-2">
                         <svg class="w-4 h-4 text-sky-400/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                                d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z"></path>
+                                d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z">
+                            </path>
                         </svg>
                         <span>Open for All</span>
                     </div>
@@ -663,20 +779,25 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-0">
                 <div class="flex flex-col items-center md:border-r md:border-sky-500/10 metric-item">
-                    <span class="font-heading text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-b from-white to-gray-400">50+</span>
+                    <span
+                        class="font-heading text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-b from-white to-gray-400">50+</span>
                     <span class="text-gray-500 text-xs uppercase tracking-[0.15em] mt-1 font-heading">Colleges</span>
                 </div>
                 <div class="flex flex-col items-center md:border-r md:border-sky-500/10 metric-item">
-                    <span class="font-heading text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-b from-white to-gray-400">150+</span>
+                    <span
+                        class="font-heading text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-b from-white to-gray-400">150+</span>
                     <span class="text-gray-500 text-xs uppercase tracking-[0.15em] mt-1 font-heading">Teams</span>
                 </div>
                 <div class="flex flex-col items-center md:border-r md:border-sky-500/10 metric-item">
-                    <span class="font-heading text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-b from-white to-gray-400">20+</span>
+                    <span
+                        class="font-heading text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-b from-white to-gray-400">20+</span>
                     <span class="text-gray-500 text-xs uppercase tracking-[0.15em] mt-1 font-heading">Mentors</span>
                 </div>
                 <div class="flex flex-col items-center metric-item">
-                    <span class="font-heading text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-b from-sky-300 to-sky-500">6</span>
-                    <span class="text-gray-500 text-xs uppercase tracking-[0.15em] mt-1 font-heading">Core Domains</span>
+                    <span
+                        class="font-heading text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-b from-sky-300 to-sky-500">6</span>
+                    <span class="text-gray-500 text-xs uppercase tracking-[0.15em] mt-1 font-heading">Core
+                        Domains</span>
                 </div>
             </div>
         </div>
@@ -687,102 +808,165 @@
     <!--                   PROBLEM DOMAINS GRID                    -->
     <!-- ═══════════════════════════════════════════════════════════ -->
     <section id="domains" class="py-24 relative">
-        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-sky-500/[0.04] rounded-full blur-[150px] pointer-events-none orb-float" data-speed="0.5"></div>
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-sky-500/[0.04] rounded-full blur-[150px] pointer-events-none orb-float"
+            data-speed="0.5"></div>
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <!-- Section Header -->
             <div class="text-center mb-16" id="domains-header">
-                <p class="font-heading text-sky-400/70 text-xs tracking-[0.3em] uppercase mb-3">// Tracks & Domains //</p>
+                <p class="font-heading text-sky-400/70 text-xs tracking-[0.3em] uppercase mb-3">// Tracks & Domains //
+                </p>
                 <h2 class="font-heading text-4xl md:text-5xl font-bold mb-4">
                     CHOOSE YOUR <span class="text-sky-400 neon-text">DOMAIN</span>
                 </h2>
-                <p class="text-gray-500 max-w-md mx-auto text-sm">Tackle real-world challenges across 6 high-impact domains with next-gen technology.</p>
+                <p class="text-gray-500 max-w-md mx-auto text-sm">Tackle real-world challenges across 6 high-impact
+                    domains with next-gen technology.</p>
             </div>
 
             <!-- Domain Cards Grid -->
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="domains-grid">
 
                 <!-- Card 1: AI & Machine Learning -->
-                <div class="tilt-card group glass-card rounded-xl p-7 relative overflow-hidden hover:border-sky-400/40 transition-all duration-500 cursor-pointer corner-accent domain-card">
-                    <div class="absolute top-0 right-0 w-32 h-32 bg-sky-500/5 rounded-full blur-[60px] group-hover:bg-sky-500/10 transition-all duration-500 pointer-events-none"></div>
+                <div
+                    class="tilt-card group glass-card rounded-xl p-7 relative overflow-hidden hover:border-sky-400/40 transition-all duration-500 cursor-pointer corner-accent domain-card">
+                    <div
+                        class="absolute top-0 right-0 w-32 h-32 bg-sky-500/5 rounded-full blur-[60px] group-hover:bg-sky-500/10 transition-all duration-500 pointer-events-none">
+                    </div>
                     <div class="tilt-inner">
-                        <div class="w-12 h-12 rounded-lg bg-sky-500/10 flex items-center justify-center mb-5 group-hover:bg-sky-500 group-hover:shadow-[0_0_20px_rgba(56,189,248,0.4)] transition-all duration-500">
-                            <svg class="w-6 h-6 text-sky-400 group-hover:text-black transition-colors duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                        <div
+                            class="w-12 h-12 rounded-lg bg-sky-500/10 flex items-center justify-center mb-5 group-hover:bg-sky-500 group-hover:shadow-[0_0_20px_rgba(56,189,248,0.4)] transition-all duration-500">
+                            <svg class="w-6 h-6 text-sky-400 group-hover:text-black transition-colors duration-500"
+                                fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                    d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z">
+                                </path>
                             </svg>
                         </div>
-                        <h3 class="text-lg font-heading font-bold mb-2 text-white group-hover:text-sky-300 transition-colors">Artificial Intelligence</h3>
-                        <p class="text-gray-500 text-sm leading-relaxed">Machine Learning, Deep Learning, Generative AI</p>
+                        <h3
+                            class="text-lg font-heading font-bold mb-2 text-white group-hover:text-sky-300 transition-colors">
+                            Artificial Intelligence</h3>
+                        <p class="text-gray-500 text-sm leading-relaxed">Machine Learning, Deep Learning, Generative AI
+                        </p>
                     </div>
                 </div>
 
                 <!-- Card 2: Healthcare -->
-                <div class="tilt-card group glass-card rounded-xl p-7 relative overflow-hidden hover:border-sky-400/40 transition-all duration-500 cursor-pointer corner-accent domain-card">
-                    <div class="absolute top-0 right-0 w-32 h-32 bg-sky-500/5 rounded-full blur-[60px] group-hover:bg-sky-500/10 transition-all duration-500 pointer-events-none"></div>
+                <div
+                    class="tilt-card group glass-card rounded-xl p-7 relative overflow-hidden hover:border-sky-400/40 transition-all duration-500 cursor-pointer corner-accent domain-card">
+                    <div
+                        class="absolute top-0 right-0 w-32 h-32 bg-sky-500/5 rounded-full blur-[60px] group-hover:bg-sky-500/10 transition-all duration-500 pointer-events-none">
+                    </div>
                     <div class="tilt-inner">
-                        <div class="w-12 h-12 rounded-lg bg-sky-500/10 flex items-center justify-center mb-5 group-hover:bg-sky-500 group-hover:shadow-[0_0_20px_rgba(56,189,248,0.4)] transition-all duration-500">
-                            <svg class="w-6 h-6 text-sky-400 group-hover:text-black transition-colors duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                        <div
+                            class="w-12 h-12 rounded-lg bg-sky-500/10 flex items-center justify-center mb-5 group-hover:bg-sky-500 group-hover:shadow-[0_0_20px_rgba(56,189,248,0.4)] transition-all duration-500">
+                            <svg class="w-6 h-6 text-sky-400 group-hover:text-black transition-colors duration-500"
+                                fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                    d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z">
+                                </path>
                             </svg>
                         </div>
-                        <h3 class="text-lg font-heading font-bold mb-2 text-white group-hover:text-sky-300 transition-colors">Healthcare</h3>
-                        <p class="text-gray-500 text-sm leading-relaxed">Diagnostics, Patient Care, Medical Data Analytics</p>
+                        <h3
+                            class="text-lg font-heading font-bold mb-2 text-white group-hover:text-sky-300 transition-colors">
+                            Healthcare</h3>
+                        <p class="text-gray-500 text-sm leading-relaxed">Diagnostics, Patient Care, Medical Data
+                            Analytics</p>
                     </div>
                 </div>
 
                 <!-- Card 3: Agriculture -->
-                <div class="tilt-card group glass-card rounded-xl p-7 relative overflow-hidden hover:border-sky-400/40 transition-all duration-500 cursor-pointer corner-accent domain-card">
-                    <div class="absolute top-0 right-0 w-32 h-32 bg-sky-500/5 rounded-full blur-[60px] group-hover:bg-sky-500/10 transition-all duration-500 pointer-events-none"></div>
+                <div
+                    class="tilt-card group glass-card rounded-xl p-7 relative overflow-hidden hover:border-sky-400/40 transition-all duration-500 cursor-pointer corner-accent domain-card">
+                    <div
+                        class="absolute top-0 right-0 w-32 h-32 bg-sky-500/5 rounded-full blur-[60px] group-hover:bg-sky-500/10 transition-all duration-500 pointer-events-none">
+                    </div>
                     <div class="tilt-inner">
-                        <div class="w-12 h-12 rounded-lg bg-sky-500/10 flex items-center justify-center mb-5 group-hover:bg-sky-500 group-hover:shadow-[0_0_20px_rgba(56,189,248,0.4)] transition-all duration-500">
-                            <svg class="w-6 h-6 text-sky-400 group-hover:text-black transition-colors duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        <div
+                            class="w-12 h-12 rounded-lg bg-sky-500/10 flex items-center justify-center mb-5 group-hover:bg-sky-500 group-hover:shadow-[0_0_20px_rgba(56,189,248,0.4)] transition-all duration-500">
+                            <svg class="w-6 h-6 text-sky-400 group-hover:text-black transition-colors duration-500"
+                                fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                    d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z">
+                                </path>
                             </svg>
                         </div>
-                        <h3 class="text-lg font-heading font-bold mb-2 text-white group-hover:text-sky-300 transition-colors">Agriculture</h3>
-                        <p class="text-gray-500 text-sm leading-relaxed">Precision Farming, Crop Analytics, Smart Irrigation</p>
+                        <h3
+                            class="text-lg font-heading font-bold mb-2 text-white group-hover:text-sky-300 transition-colors">
+                            Agriculture</h3>
+                        <p class="text-gray-500 text-sm leading-relaxed">Precision Farming, Crop Analytics, Smart
+                            Irrigation</p>
                     </div>
                 </div>
 
                 <!-- Card 4: FinTech -->
-                <div class="tilt-card group glass-card rounded-xl p-7 relative overflow-hidden hover:border-sky-400/40 transition-all duration-500 cursor-pointer corner-accent domain-card">
-                    <div class="absolute top-0 right-0 w-32 h-32 bg-sky-500/5 rounded-full blur-[60px] group-hover:bg-sky-500/10 transition-all duration-500 pointer-events-none"></div>
+                <div
+                    class="tilt-card group glass-card rounded-xl p-7 relative overflow-hidden hover:border-sky-400/40 transition-all duration-500 cursor-pointer corner-accent domain-card">
+                    <div
+                        class="absolute top-0 right-0 w-32 h-32 bg-sky-500/5 rounded-full blur-[60px] group-hover:bg-sky-500/10 transition-all duration-500 pointer-events-none">
+                    </div>
                     <div class="tilt-inner">
-                        <div class="w-12 h-12 rounded-lg bg-sky-500/10 flex items-center justify-center mb-5 group-hover:bg-sky-500 group-hover:shadow-[0_0_20px_rgba(56,189,248,0.4)] transition-all duration-500">
-                            <svg class="w-6 h-6 text-sky-400 group-hover:text-black transition-colors duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        <div
+                            class="w-12 h-12 rounded-lg bg-sky-500/10 flex items-center justify-center mb-5 group-hover:bg-sky-500 group-hover:shadow-[0_0_20px_rgba(56,189,248,0.4)] transition-all duration-500">
+                            <svg class="w-6 h-6 text-sky-400 group-hover:text-black transition-colors duration-500"
+                                fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                    d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z">
+                                </path>
                             </svg>
                         </div>
-                        <h3 class="text-lg font-heading font-bold mb-2 text-white group-hover:text-sky-300 transition-colors">FinTech</h3>
-                        <p class="text-gray-500 text-sm leading-relaxed">Digital Banking, Fraud Detection, Smart Contracts</p>
+                        <h3
+                            class="text-lg font-heading font-bold mb-2 text-white group-hover:text-sky-300 transition-colors">
+                            FinTech</h3>
+                        <p class="text-gray-500 text-sm leading-relaxed">Digital Banking, Fraud Detection, Smart
+                            Contracts</p>
                     </div>
                 </div>
 
                 <!-- Card 5: Smart City -->
-                <div class="tilt-card group glass-card rounded-xl p-7 relative overflow-hidden hover:border-sky-400/40 transition-all duration-500 cursor-pointer corner-accent domain-card">
-                    <div class="absolute top-0 right-0 w-32 h-32 bg-sky-500/5 rounded-full blur-[60px] group-hover:bg-sky-500/10 transition-all duration-500 pointer-events-none"></div>
+                <div
+                    class="tilt-card group glass-card rounded-xl p-7 relative overflow-hidden hover:border-sky-400/40 transition-all duration-500 cursor-pointer corner-accent domain-card">
+                    <div
+                        class="absolute top-0 right-0 w-32 h-32 bg-sky-500/5 rounded-full blur-[60px] group-hover:bg-sky-500/10 transition-all duration-500 pointer-events-none">
+                    </div>
                     <div class="tilt-inner">
-                        <div class="w-12 h-12 rounded-lg bg-sky-500/10 flex items-center justify-center mb-5 group-hover:bg-sky-500 group-hover:shadow-[0_0_20px_rgba(56,189,248,0.4)] transition-all duration-500">
-                            <svg class="w-6 h-6 text-sky-400 group-hover:text-black transition-colors duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                        <div
+                            class="w-12 h-12 rounded-lg bg-sky-500/10 flex items-center justify-center mb-5 group-hover:bg-sky-500 group-hover:shadow-[0_0_20px_rgba(56,189,248,0.4)] transition-all duration-500">
+                            <svg class="w-6 h-6 text-sky-400 group-hover:text-black transition-colors duration-500"
+                                fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                    d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4">
+                                </path>
                             </svg>
                         </div>
-                        <h3 class="text-lg font-heading font-bold mb-2 text-white group-hover:text-sky-300 transition-colors">Smart City</h3>
-                        <p class="text-gray-500 text-sm leading-relaxed">IoT, Urban Planning, Sustainable Infrastructure</p>
+                        <h3
+                            class="text-lg font-heading font-bold mb-2 text-white group-hover:text-sky-300 transition-colors">
+                            Smart City</h3>
+                        <p class="text-gray-500 text-sm leading-relaxed">IoT, Urban Planning, Sustainable Infrastructure
+                        </p>
                     </div>
                 </div>
 
                 <!-- Card 6: Education Tech -->
-                <div class="tilt-card group glass-card rounded-xl p-7 relative overflow-hidden hover:border-sky-400/40 transition-all duration-500 cursor-pointer corner-accent domain-card">
-                    <div class="absolute top-0 right-0 w-32 h-32 bg-sky-500/5 rounded-full blur-[60px] group-hover:bg-sky-500/10 transition-all duration-500 pointer-events-none"></div>
+                <div
+                    class="tilt-card group glass-card rounded-xl p-7 relative overflow-hidden hover:border-sky-400/40 transition-all duration-500 cursor-pointer corner-accent domain-card">
+                    <div
+                        class="absolute top-0 right-0 w-32 h-32 bg-sky-500/5 rounded-full blur-[60px] group-hover:bg-sky-500/10 transition-all duration-500 pointer-events-none">
+                    </div>
                     <div class="tilt-inner">
-                        <div class="w-12 h-12 rounded-lg bg-sky-500/10 flex items-center justify-center mb-5 group-hover:bg-sky-500 group-hover:shadow-[0_0_20px_rgba(56,189,248,0.4)] transition-all duration-500">
-                            <svg class="w-6 h-6 text-sky-400 group-hover:text-black transition-colors duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                        <div
+                            class="w-12 h-12 rounded-lg bg-sky-500/10 flex items-center justify-center mb-5 group-hover:bg-sky-500 group-hover:shadow-[0_0_20px_rgba(56,189,248,0.4)] transition-all duration-500">
+                            <svg class="w-6 h-6 text-sky-400 group-hover:text-black transition-colors duration-500"
+                                fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                    d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253">
+                                </path>
                             </svg>
                         </div>
-                        <h3 class="text-lg font-heading font-bold mb-2 text-white group-hover:text-sky-300 transition-colors">Education Tech</h3>
-                        <p class="text-gray-500 text-sm leading-relaxed">Adaptive Learning, AI Tutors, Accessible Education</p>
+                        <h3
+                            class="text-lg font-heading font-bold mb-2 text-white group-hover:text-sky-300 transition-colors">
+                            Education Tech</h3>
+                        <p class="text-gray-500 text-sm leading-relaxed">Adaptive Learning, AI Tutors, Accessible
+                            Education</p>
                     </div>
                 </div>
             </div>
@@ -794,16 +978,19 @@
     <!--                  STUDENT JOURNEY PIPELINE                 -->
     <!-- ═══════════════════════════════════════════════════════════ -->
     <section id="journey" class="py-24 relative border-t border-sky-500/10">
-        <div class="absolute bottom-0 left-0 w-[500px] h-[400px] bg-sky-500/[0.04] rounded-full blur-[120px] pointer-events-none orb-float" data-speed="0.7"></div>
+        <div class="absolute bottom-0 left-0 w-[500px] h-[400px] bg-sky-500/[0.04] rounded-full blur-[120px] pointer-events-none orb-float"
+            data-speed="0.7"></div>
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <!-- Section Header -->
             <div class="text-center mb-16" id="journey-header">
-                <p class="font-heading text-sky-400/70 text-xs tracking-[0.3em] uppercase mb-3">/// Hackathon Journey ///</p>
+                <p class="font-heading text-sky-400/70 text-xs tracking-[0.3em] uppercase mb-3">/// Hackathon Journey
+                    ///</p>
                 <h2 class="font-heading text-4xl md:text-5xl font-bold mb-4">
                     YOUR <span class="text-sky-400 neon-text">PATH</span> TO VICTORY
                 </h2>
-                <p class="text-gray-500 max-w-md mx-auto text-sm">From registration to the grand finale — here's every step of the journey.</p>
+                <p class="text-gray-500 max-w-md mx-auto text-sm">From registration to the grand finale — here's every
+                    step of the journey.</p>
             </div>
 
             <!-- Desktop Journey: Horizontal Pipeline -->
@@ -819,10 +1006,14 @@
                     <div class="grid grid-cols-7 gap-4">
                         <!-- Step 1: Register -->
                         <div class="flex flex-col items-center text-center group journey-step" data-step="0">
-                            <p class="font-heading text-[0.6rem] text-sky-400/50 tracking-[0.2em] uppercase mb-3">Step 01</p>
-                            <div class="step-node w-[68px] h-[68px] rounded-2xl bg-dark-800 border border-sky-500/20 flex items-center justify-center mb-4 relative z-10">
+                            <p class="font-heading text-[0.6rem] text-sky-400/50 tracking-[0.2em] uppercase mb-3">Step
+                                01</p>
+                            <div
+                                class="step-node w-[68px] h-[68px] rounded-2xl bg-dark-800 border border-sky-500/20 flex items-center justify-center mb-4 relative z-10">
                                 <svg class="w-7 h-7 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                        d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z">
+                                    </path>
                                 </svg>
                             </div>
                             <h4 class="font-heading font-bold text-white text-sm mb-1">Register</h4>
@@ -831,22 +1022,31 @@
 
                         <!-- Step 2: Team -->
                         <div class="flex flex-col items-center text-center group journey-step" data-step="1">
-                            <p class="font-heading text-[0.6rem] text-sky-400/50 tracking-[0.2em] uppercase mb-3">Step 02</p>
-                            <div class="step-node w-[68px] h-[68px] rounded-2xl bg-dark-800 border border-sky-500/20 flex items-center justify-center mb-4 relative z-10">
+                            <p class="font-heading text-[0.6rem] text-sky-400/50 tracking-[0.2em] uppercase mb-3">Step
+                                02</p>
+                            <div
+                                class="step-node w-[68px] h-[68px] rounded-2xl bg-dark-800 border border-sky-500/20 flex items-center justify-center mb-4 relative z-10">
                                 <svg class="w-7 h-7 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                        d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z">
+                                    </path>
                                 </svg>
                             </div>
                             <h4 class="font-heading font-bold text-white text-sm mb-1">Form Team</h4>
-                            <p class="text-gray-600 text-[0.65rem] leading-relaxed">Collaborate and build your dream team</p>
+                            <p class="text-gray-600 text-[0.65rem] leading-relaxed">Collaborate and build your dream
+                                team</p>
                         </div>
 
                         <!-- Step 3: Problem -->
                         <div class="flex flex-col items-center text-center group journey-step" data-step="2">
-                            <p class="font-heading text-[0.6rem] text-sky-400/50 tracking-[0.2em] uppercase mb-3">Step 03</p>
-                            <div class="step-node w-[68px] h-[68px] rounded-2xl bg-dark-800 border border-sky-500/20 flex items-center justify-center mb-4 relative z-10">
+                            <p class="font-heading text-[0.6rem] text-sky-400/50 tracking-[0.2em] uppercase mb-3">Step
+                                03</p>
+                            <div
+                                class="step-node w-[68px] h-[68px] rounded-2xl bg-dark-800 border border-sky-500/20 flex items-center justify-center mb-4 relative z-10">
                                 <svg class="w-7 h-7 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                        d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01">
+                                    </path>
                                 </svg>
                             </div>
                             <h4 class="font-heading font-bold text-white text-sm mb-1">Pick Problem</h4>
@@ -855,22 +1055,30 @@
 
                         <!-- Step 4: Submit Idea (ACTIVE) -->
                         <div class="flex flex-col items-center text-center group journey-step" data-step="3">
-                            <p class="font-heading text-[0.6rem] text-sky-400 tracking-[0.2em] uppercase mb-3 font-semibold">Step 04</p>
-                            <div class="step-node step-active-permanent w-[68px] h-[68px] rounded-2xl bg-sky-500/10 border-2 border-sky-400 flex items-center justify-center mb-4 relative z-10">
+                            <p
+                                class="font-heading text-[0.6rem] text-sky-400 tracking-[0.2em] uppercase mb-3 font-semibold">
+                                Step 04</p>
+                            <div
+                                class="step-node step-active-permanent w-[68px] h-[68px] rounded-2xl bg-sky-500/10 border-2 border-sky-400 flex items-center justify-center mb-4 relative z-10">
                                 <svg class="w-7 h-7 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                        d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
                                 </svg>
                             </div>
                             <h4 class="font-heading font-bold text-sky-400 text-sm mb-1">Submit Idea</h4>
-                            <p class="text-gray-500 text-[0.65rem] leading-relaxed">Code, prototype and bring your ideas to life</p>
+                            <p class="text-gray-500 text-[0.65rem] leading-relaxed">Code, prototype and bring your ideas
+                                to life</p>
                         </div>
 
                         <!-- Step 5: Screening -->
                         <div class="flex flex-col items-center text-center group journey-step" data-step="4">
-                            <p class="font-heading text-[0.6rem] text-sky-400/50 tracking-[0.2em] uppercase mb-3">Step 05</p>
-                            <div class="step-node w-[68px] h-[68px] rounded-2xl bg-dark-800 border border-sky-500/20 flex items-center justify-center mb-4 relative z-10">
+                            <p class="font-heading text-[0.6rem] text-sky-400/50 tracking-[0.2em] uppercase mb-3">Step
+                                05</p>
+                            <div
+                                class="step-node w-[68px] h-[68px] rounded-2xl bg-dark-800 border border-sky-500/20 flex items-center justify-center mb-4 relative z-10">
                                 <svg class="w-7 h-7 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
                                 </svg>
                             </div>
                             <h4 class="font-heading font-bold text-white text-sm mb-1">Screening</h4>
@@ -879,10 +1087,13 @@
 
                         <!-- Step 6: Shortlist -->
                         <div class="flex flex-col items-center text-center group journey-step" data-step="5">
-                            <p class="font-heading text-[0.6rem] text-sky-400/50 tracking-[0.2em] uppercase mb-3">Step 06</p>
-                            <div class="step-node w-[68px] h-[68px] rounded-2xl bg-dark-800 border border-sky-500/20 flex items-center justify-center mb-4 relative z-10">
+                            <p class="font-heading text-[0.6rem] text-sky-400/50 tracking-[0.2em] uppercase mb-3">Step
+                                06</p>
+                            <div
+                                class="step-node w-[68px] h-[68px] rounded-2xl bg-dark-800 border border-sky-500/20 flex items-center justify-center mb-4 relative z-10">
                                 <svg class="w-7 h-7 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                                 </svg>
                             </div>
                             <h4 class="font-heading font-bold text-white text-sm mb-1">Shortlist</h4>
@@ -891,10 +1102,14 @@
 
                         <!-- Step 7: Grand Finale -->
                         <div class="flex flex-col items-center text-center group journey-step" data-step="6">
-                            <p class="font-heading text-[0.6rem] text-sky-400/50 tracking-[0.2em] uppercase mb-3">Step 07</p>
-                            <div class="step-node w-[68px] h-[68px] rounded-2xl bg-dark-800 border border-sky-500/20 flex items-center justify-center mb-4 relative z-10">
+                            <p class="font-heading text-[0.6rem] text-sky-400/50 tracking-[0.2em] uppercase mb-3">Step
+                                07</p>
+                            <div
+                                class="step-node w-[68px] h-[68px] rounded-2xl bg-dark-800 border border-sky-500/20 flex items-center justify-center mb-4 relative z-10">
                                 <svg class="w-7 h-7 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                        d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z">
+                                    </path>
                                 </svg>
                             </div>
                             <h4 class="font-heading font-bold text-white text-sm mb-1">Grand Finale</h4>
@@ -908,65 +1123,126 @@
             <div class="lg:hidden space-y-0" id="journey-mobile">
                 <div class="flex gap-5 items-start journey-step-mobile">
                     <div class="flex flex-col items-center">
-                        <div class="step-node w-12 h-12 rounded-xl bg-dark-800 border border-sky-500/20 flex items-center justify-center shrink-0">
-                            <svg class="w-5 h-5 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z"></path></svg>
+                        <div
+                            class="step-node w-12 h-12 rounded-xl bg-dark-800 border border-sky-500/20 flex items-center justify-center shrink-0">
+                            <svg class="w-5 h-5 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                    d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z">
+                                </path>
+                            </svg>
                         </div>
                         <div class="w-[2px] h-8 bg-gradient-to-b from-sky-500/30 to-transparent"></div>
                     </div>
-                    <div class="pb-8"><p class="font-heading text-[0.6rem] text-sky-400/50 tracking-[0.2em] uppercase">Step 01</p><h4 class="font-heading font-bold text-white text-sm">Register</h4><p class="text-gray-600 text-xs">Sign up and choose your track</p></div>
+                    <div class="pb-8">
+                        <p class="font-heading text-[0.6rem] text-sky-400/50 tracking-[0.2em] uppercase">Step 01</p>
+                        <h4 class="font-heading font-bold text-white text-sm">Register</h4>
+                        <p class="text-gray-600 text-xs">Sign up and choose your track</p>
+                    </div>
                 </div>
                 <div class="flex gap-5 items-start journey-step-mobile">
                     <div class="flex flex-col items-center">
-                        <div class="step-node w-12 h-12 rounded-xl bg-dark-800 border border-sky-500/20 flex items-center justify-center shrink-0">
-                            <svg class="w-5 h-5 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                        <div
+                            class="step-node w-12 h-12 rounded-xl bg-dark-800 border border-sky-500/20 flex items-center justify-center shrink-0">
+                            <svg class="w-5 h-5 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                    d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z">
+                                </path>
+                            </svg>
                         </div>
                         <div class="w-[2px] h-8 bg-gradient-to-b from-sky-500/30 to-transparent"></div>
                     </div>
-                    <div class="pb-8"><p class="font-heading text-[0.6rem] text-sky-400/50 tracking-[0.2em] uppercase">Step 02</p><h4 class="font-heading font-bold text-white text-sm">Form Team</h4><p class="text-gray-600 text-xs">Collaborate and build your dream team</p></div>
+                    <div class="pb-8">
+                        <p class="font-heading text-[0.6rem] text-sky-400/50 tracking-[0.2em] uppercase">Step 02</p>
+                        <h4 class="font-heading font-bold text-white text-sm">Form Team</h4>
+                        <p class="text-gray-600 text-xs">Collaborate and build your dream team</p>
+                    </div>
                 </div>
                 <div class="flex gap-5 items-start journey-step-mobile">
                     <div class="flex flex-col items-center">
-                        <div class="step-node w-12 h-12 rounded-xl bg-dark-800 border border-sky-500/20 flex items-center justify-center shrink-0">
-                            <svg class="w-5 h-5 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path></svg>
+                        <div
+                            class="step-node w-12 h-12 rounded-xl bg-dark-800 border border-sky-500/20 flex items-center justify-center shrink-0">
+                            <svg class="w-5 h-5 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                    d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2">
+                                </path>
+                            </svg>
                         </div>
                         <div class="w-[2px] h-8 bg-gradient-to-b from-sky-500/30 to-transparent"></div>
                     </div>
-                    <div class="pb-8"><p class="font-heading text-[0.6rem] text-sky-400/50 tracking-[0.2em] uppercase">Step 03</p><h4 class="font-heading font-bold text-white text-sm">Pick Problem</h4><p class="text-gray-600 text-xs">Select your challenge statement</p></div>
+                    <div class="pb-8">
+                        <p class="font-heading text-[0.6rem] text-sky-400/50 tracking-[0.2em] uppercase">Step 03</p>
+                        <h4 class="font-heading font-bold text-white text-sm">Pick Problem</h4>
+                        <p class="text-gray-600 text-xs">Select your challenge statement</p>
+                    </div>
                 </div>
                 <div class="flex gap-5 items-start journey-step-mobile">
                     <div class="flex flex-col items-center">
-                        <div class="step-node step-active-permanent w-12 h-12 rounded-xl bg-sky-500/10 border-2 border-sky-400 flex items-center justify-center shrink-0">
-                            <svg class="w-5 h-5 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                        <div
+                            class="step-node step-active-permanent w-12 h-12 rounded-xl bg-sky-500/10 border-2 border-sky-400 flex items-center justify-center shrink-0">
+                            <svg class="w-5 h-5 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                    d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+                            </svg>
                         </div>
                         <div class="w-[2px] h-8 bg-gradient-to-b from-sky-400/50 to-transparent"></div>
                     </div>
-                    <div class="pb-8"><p class="font-heading text-[0.6rem] text-sky-400 tracking-[0.2em] uppercase font-semibold">Step 04</p><h4 class="font-heading font-bold text-sky-400 text-sm">Submit Idea</h4><p class="text-gray-500 text-xs">Code, prototype and bring your ideas to life</p></div>
+                    <div class="pb-8">
+                        <p class="font-heading text-[0.6rem] text-sky-400 tracking-[0.2em] uppercase font-semibold">Step
+                            04</p>
+                        <h4 class="font-heading font-bold text-sky-400 text-sm">Submit Idea</h4>
+                        <p class="text-gray-500 text-xs">Code, prototype and bring your ideas to life</p>
+                    </div>
                 </div>
                 <div class="flex gap-5 items-start journey-step-mobile">
                     <div class="flex flex-col items-center">
-                        <div class="step-node w-12 h-12 rounded-xl bg-dark-800 border border-sky-500/20 flex items-center justify-center shrink-0">
-                            <svg class="w-5 h-5 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                        <div
+                            class="step-node w-12 h-12 rounded-xl bg-dark-800 border border-sky-500/20 flex items-center justify-center shrink-0">
+                            <svg class="w-5 h-5 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                            </svg>
                         </div>
                         <div class="w-[2px] h-8 bg-gradient-to-b from-sky-500/30 to-transparent"></div>
                     </div>
-                    <div class="pb-8"><p class="font-heading text-[0.6rem] text-sky-400/50 tracking-[0.2em] uppercase">Step 05</p><h4 class="font-heading font-bold text-white text-sm">Screening</h4><p class="text-gray-600 text-xs">Expert review & evaluation</p></div>
+                    <div class="pb-8">
+                        <p class="font-heading text-[0.6rem] text-sky-400/50 tracking-[0.2em] uppercase">Step 05</p>
+                        <h4 class="font-heading font-bold text-white text-sm">Screening</h4>
+                        <p class="text-gray-600 text-xs">Expert review & evaluation</p>
+                    </div>
                 </div>
                 <div class="flex gap-5 items-start journey-step-mobile">
                     <div class="flex flex-col items-center">
-                        <div class="step-node w-12 h-12 rounded-xl bg-dark-800 border border-sky-500/20 flex items-center justify-center shrink-0">
-                            <svg class="w-5 h-5 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        <div
+                            class="step-node w-12 h-12 rounded-xl bg-dark-800 border border-sky-500/20 flex items-center justify-center shrink-0">
+                            <svg class="w-5 h-5 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
                         </div>
                         <div class="w-[2px] h-8 bg-gradient-to-b from-sky-500/30 to-transparent"></div>
                     </div>
-                    <div class="pb-8"><p class="font-heading text-[0.6rem] text-sky-400/50 tracking-[0.2em] uppercase">Step 06</p><h4 class="font-heading font-bold text-white text-sm">Shortlist</h4><p class="text-gray-600 text-xs">Top teams advance forward</p></div>
+                    <div class="pb-8">
+                        <p class="font-heading text-[0.6rem] text-sky-400/50 tracking-[0.2em] uppercase">Step 06</p>
+                        <h4 class="font-heading font-bold text-white text-sm">Shortlist</h4>
+                        <p class="text-gray-600 text-xs">Top teams advance forward</p>
+                    </div>
                 </div>
                 <div class="flex gap-5 items-start journey-step-mobile">
                     <div class="flex flex-col items-center">
-                        <div class="step-node w-12 h-12 rounded-xl bg-dark-800 border border-sky-500/20 flex items-center justify-center shrink-0">
-                            <svg class="w-5 h-5 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path></svg>
+                        <div
+                            class="step-node w-12 h-12 rounded-xl bg-dark-800 border border-sky-500/20 flex items-center justify-center shrink-0">
+                            <svg class="w-5 h-5 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                    d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z">
+                                </path>
+                            </svg>
                         </div>
                     </div>
-                    <div><p class="font-heading text-[0.6rem] text-sky-400/50 tracking-[0.2em] uppercase">Step 07</p><h4 class="font-heading font-bold text-white text-sm">Grand Finale</h4><p class="text-gray-600 text-xs">Win & celebrate your victory!</p></div>
+                    <div>
+                        <p class="font-heading text-[0.6rem] text-sky-400/50 tracking-[0.2em] uppercase">Step 07</p>
+                        <h4 class="font-heading font-bold text-white text-sm">Grand Finale</h4>
+                        <p class="text-gray-600 text-xs">Win & celebrate your victory!</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -979,29 +1255,65 @@
     <section class="py-16 border-t border-sky-500/10" id="perks-section">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5" id="perks-grid">
-                <div class="glass-card glass-bloom rounded-xl p-6 flex items-start gap-4 group hover:border-sky-400/30 transition-all duration-300 perk-card">
-                    <div class="w-11 h-11 rounded-lg bg-sky-500/10 flex items-center justify-center shrink-0 group-hover:bg-sky-500/20 transition-all duration-300">
-                        <svg class="w-5 h-5 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"></path></svg>
+                <div
+                    class="glass-card glass-bloom rounded-xl p-6 flex items-start gap-4 group hover:border-sky-400/30 transition-all duration-300 perk-card">
+                    <div
+                        class="w-11 h-11 rounded-lg bg-sky-500/10 flex items-center justify-center shrink-0 group-hover:bg-sky-500/20 transition-all duration-300">
+                        <svg class="w-5 h-5 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7">
+                            </path>
+                        </svg>
                     </div>
-                    <div><h4 class="font-heading font-bold text-white text-sm mb-1">Exciting Prizes</h4><p class="text-gray-500 text-xs leading-relaxed">Win amazing rewards and goodies</p></div>
+                    <div>
+                        <h4 class="font-heading font-bold text-white text-sm mb-1">Exciting Prizes</h4>
+                        <p class="text-gray-500 text-xs leading-relaxed">Win amazing rewards and goodies</p>
+                    </div>
                 </div>
-                <div class="glass-card glass-bloom rounded-xl p-6 flex items-start gap-4 group hover:border-sky-400/30 transition-all duration-300 perk-card">
-                    <div class="w-11 h-11 rounded-lg bg-sky-500/10 flex items-center justify-center shrink-0 group-hover:bg-sky-500/20 transition-all duration-300">
-                        <svg class="w-5 h-5 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
+                <div
+                    class="glass-card glass-bloom rounded-xl p-6 flex items-start gap-4 group hover:border-sky-400/30 transition-all duration-300 perk-card">
+                    <div
+                        class="w-11 h-11 rounded-lg bg-sky-500/10 flex items-center justify-center shrink-0 group-hover:bg-sky-500/20 transition-all duration-300">
+                        <svg class="w-5 h-5 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z">
+                            </path>
+                        </svg>
                     </div>
-                    <div><h4 class="font-heading font-bold text-white text-sm mb-1">Expert Mentorship</h4><p class="text-gray-500 text-xs leading-relaxed">Learn from industry leaders and mentors</p></div>
+                    <div>
+                        <h4 class="font-heading font-bold text-white text-sm mb-1">Expert Mentorship</h4>
+                        <p class="text-gray-500 text-xs leading-relaxed">Learn from industry leaders and mentors</p>
+                    </div>
                 </div>
-                <div class="glass-card glass-bloom rounded-xl p-6 flex items-start gap-4 group hover:border-sky-400/30 transition-all duration-300 perk-card">
-                    <div class="w-11 h-11 rounded-lg bg-sky-500/10 flex items-center justify-center shrink-0 group-hover:bg-sky-500/20 transition-all duration-300">
-                        <svg class="w-5 h-5 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9"></path></svg>
+                <div
+                    class="glass-card glass-bloom rounded-xl p-6 flex items-start gap-4 group hover:border-sky-400/30 transition-all duration-300 perk-card">
+                    <div
+                        class="w-11 h-11 rounded-lg bg-sky-500/10 flex items-center justify-center shrink-0 group-hover:bg-sky-500/20 transition-all duration-300">
+                        <svg class="w-5 h-5 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9">
+                            </path>
+                        </svg>
                     </div>
-                    <div><h4 class="font-heading font-bold text-white text-sm mb-1">Networking</h4><p class="text-gray-500 text-xs leading-relaxed">Connect with like-minded innovators</p></div>
+                    <div>
+                        <h4 class="font-heading font-bold text-white text-sm mb-1">Networking</h4>
+                        <p class="text-gray-500 text-xs leading-relaxed">Connect with like-minded innovators</p>
+                    </div>
                 </div>
-                <div class="glass-card glass-bloom rounded-xl p-6 flex items-start gap-4 group hover:border-sky-400/30 transition-all duration-300 perk-card">
-                    <div class="w-11 h-11 rounded-lg bg-sky-500/10 flex items-center justify-center shrink-0 group-hover:bg-sky-500/20 transition-all duration-300">
-                        <svg class="w-5 h-5 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path></svg>
+                <div
+                    class="glass-card glass-bloom rounded-xl p-6 flex items-start gap-4 group hover:border-sky-400/30 transition-all duration-300 perk-card">
+                    <div
+                        class="w-11 h-11 rounded-lg bg-sky-500/10 flex items-center justify-center shrink-0 group-hover:bg-sky-500/20 transition-all duration-300">
+                        <svg class="w-5 h-5 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z">
+                            </path>
+                        </svg>
                     </div>
-                    <div><h4 class="font-heading font-bold text-white text-sm mb-1">Participation Certificate</h4><p class="text-gray-500 text-xs leading-relaxed">E-certificate for all participants</p></div>
+                    <div>
+                        <h4 class="font-heading font-bold text-white text-sm mb-1">Participation Certificate</h4>
+                        <p class="text-gray-500 text-xs leading-relaxed">E-certificate for all participants</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1018,7 +1330,8 @@
                 <!-- Footer Logo -->
                 <div class="lg:col-span-1">
                     <div class="flex items-center gap-2.5 mb-5">
-                        <div class="w-8 h-8 rounded bg-sky-400 flex items-center justify-center shadow-[0_0_15px_rgba(56,189,248,0.4)]">
+                        <div
+                            class="w-8 h-8 rounded bg-sky-400 flex items-center justify-center shadow-[0_0_15px_rgba(56,189,248,0.4)]">
                             <span class="font-heading font-bold text-black text-sm leading-none">AI</span>
                         </div>
                         <span class="font-heading font-bold text-xl tracking-wide">
@@ -1026,16 +1339,35 @@
                             <span class="text-sky-400 ml-1">2.0</span>
                         </span>
                     </div>
-                    <p class="text-gray-600 text-sm leading-relaxed mb-6">Organized by the Department of AI & DS at Amrutvahini College of Engineering, Sangamner.</p>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-6">Organized by the Department of AI & DS at
+                        Amrutvahini College of Engineering, Sangamner.</p>
                     <div class="flex gap-3">
-                        <a href="#" class="w-9 h-9 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center hover:border-sky-400/50 hover:bg-sky-400/10 transition-all duration-300 group">
-                            <svg class="w-4 h-4 text-gray-500 group-hover:text-sky-400 transition-colors" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg>
+                        <a href="#"
+                            class="w-9 h-9 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center hover:border-sky-400/50 hover:bg-sky-400/10 transition-all duration-300 group">
+                            <svg class="w-4 h-4 text-gray-500 group-hover:text-sky-400 transition-colors"
+                                fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z">
+                                </path>
+                            </svg>
                         </a>
-                        <a href="#" class="w-9 h-9 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center hover:border-sky-400/50 hover:bg-sky-400/10 transition-all duration-300 group">
-                            <svg class="w-4 h-4 text-gray-500 group-hover:text-sky-400 transition-colors" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path></svg>
+                        <a href="#"
+                            class="w-9 h-9 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center hover:border-sky-400/50 hover:bg-sky-400/10 transition-all duration-300 group">
+                            <svg class="w-4 h-4 text-gray-500 group-hover:text-sky-400 transition-colors"
+                                fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z">
+                                </path>
+                            </svg>
                         </a>
-                        <a href="#" class="w-9 h-9 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center hover:border-sky-400/50 hover:bg-sky-400/10 transition-all duration-300 group">
-                            <svg class="w-4 h-4 text-gray-500 group-hover:text-sky-400 transition-colors" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"></path></svg>
+                        <a href="#"
+                            class="w-9 h-9 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center hover:border-sky-400/50 hover:bg-sky-400/10 transition-all duration-300 group">
+                            <svg class="w-4 h-4 text-gray-500 group-hover:text-sky-400 transition-colors"
+                                fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z">
+                                </path>
+                            </svg>
                         </a>
                     </div>
                 </div>
@@ -1043,30 +1375,62 @@
                 <div>
                     <h4 class="font-heading font-bold text-white text-sm tracking-wider uppercase mb-5">Quick Links</h4>
                     <ul class="space-y-3">
-                        <li><a href="#" class="text-gray-500 hover:text-sky-400 transition-colors text-sm flex items-center gap-2"><span class="text-sky-500/50">›</span> Rules & Guidelines</a></li>
-                        <li><a href="#" class="text-gray-500 hover:text-sky-400 transition-colors text-sm flex items-center gap-2"><span class="text-sky-500/50">›</span> FAQ</a></li>
-                        <li><a href="#domains" class="text-gray-500 hover:text-sky-400 transition-colors text-sm flex items-center gap-2"><span class="text-sky-500/50">›</span> Problem Statements</a></li>
-                        <li><a href="#journey" class="text-gray-500 hover:text-sky-400 transition-colors text-sm flex items-center gap-2"><span class="text-sky-500/50">›</span> Timeline</a></li>
-                        <li><a href="#" class="text-gray-500 hover:text-sky-400 transition-colors text-sm flex items-center gap-2"><span class="text-sky-500/50">›</span> Privacy Policy</a></li>
+                        <li><a href="#"
+                                class="text-gray-500 hover:text-sky-400 transition-colors text-sm flex items-center gap-2"><span
+                                    class="text-sky-500/50">›</span> Rules & Guidelines</a></li>
+                        <li><a href="#"
+                                class="text-gray-500 hover:text-sky-400 transition-colors text-sm flex items-center gap-2"><span
+                                    class="text-sky-500/50">›</span> FAQ</a></li>
+                        <li><a href="#domains"
+                                class="text-gray-500 hover:text-sky-400 transition-colors text-sm flex items-center gap-2"><span
+                                    class="text-sky-500/50">›</span> Problem Statements</a></li>
+                        <li><a href="#journey"
+                                class="text-gray-500 hover:text-sky-400 transition-colors text-sm flex items-center gap-2"><span
+                                    class="text-sky-500/50">›</span> Timeline</a></li>
+                        <li><a href="#"
+                                class="text-gray-500 hover:text-sky-400 transition-colors text-sm flex items-center gap-2"><span
+                                    class="text-sky-500/50">›</span> Privacy Policy</a></li>
                     </ul>
                 </div>
                 <!-- Contact -->
                 <div>
                     <h4 class="font-heading font-bold text-white text-sm tracking-wider uppercase mb-5">Contact</h4>
                     <ul class="space-y-3 text-sm text-gray-500">
-                        <li class="flex items-start gap-2"><svg class="w-4 h-4 text-sky-400/50 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>aithon2.0@avcoe.org</li>
-                        <li class="flex items-start gap-2"><svg class="w-4 h-4 text-sky-400/50 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>+91 98765 43210</li>
-                        <li class="flex items-start gap-2"><svg class="w-4 h-4 text-sky-400/50 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>Amrutvahini College of Engineering, Sangamner, Maharashtra</li>
+                        <li class="flex items-start gap-2"><svg class="w-4 h-4 text-sky-400/50 mt-0.5 shrink-0"
+                                fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+                                </path>
+                            </svg>aithon2.0@avcoe.org</li>
+                        <li class="flex items-start gap-2"><svg class="w-4 h-4 text-sky-400/50 mt-0.5 shrink-0"
+                                fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z">
+                                </path>
+                            </svg>+91 98765 43210</li>
+                        <li class="flex items-start gap-2"><svg class="w-4 h-4 text-sky-400/50 mt-0.5 shrink-0"
+                                fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z">
+                                </path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                            </svg>Amrutvahini College of Engineering, Sangamner, Maharashtra</li>
                     </ul>
                 </div>
                 <!-- Certificate Verification -->
                 <div>
-                    <h4 class="font-heading font-bold text-white text-sm tracking-wider uppercase mb-5">Verify Certificate</h4>
-                    <p class="text-gray-600 text-xs mb-4 leading-relaxed">Enter your certificate ID to verify its authenticity.</p>
+                    <h4 class="font-heading font-bold text-white text-sm tracking-wider uppercase mb-5">Verify
+                        Certificate</h4>
+                    <p class="text-gray-600 text-xs mb-4 leading-relaxed">Enter your certificate ID to verify its
+                        authenticity.</p>
                     <div class="flex gap-2">
                         <input type="text" placeholder="e.g. AITH-2025-XXXX"
-                            class="flex-1 bg-white/5 border border-white/10 rounded-lg px-4 py-2.5 text-sm text-white placeholder-gray-600 focus:border-sky-400/50 focus:outline-none focus:ring-1 focus:ring-sky-400/30 transition-all duration-300 font-body" id="cert-input">
-                        <button class="px-4 py-2.5 bg-sky-500/20 border border-sky-400/30 text-sky-400 rounded-lg hover:bg-sky-500/30 hover:border-sky-400/50 hover:shadow-[0_0_15px_rgba(56,189,248,0.2)] transition-all duration-300 text-sm font-heading font-semibold shrink-0" id="cert-verify-btn">Verify</button>
+                            class="flex-1 bg-white/5 border border-white/10 rounded-lg px-4 py-2.5 text-sm text-white placeholder-gray-600 focus:border-sky-400/50 focus:outline-none focus:ring-1 focus:ring-sky-400/30 transition-all duration-300 font-body"
+                            id="cert-input">
+                        <button
+                            class="px-4 py-2.5 bg-sky-500/20 border border-sky-400/30 text-sky-400 rounded-lg hover:bg-sky-500/30 hover:border-sky-400/50 hover:shadow-[0_0_15px_rgba(56,189,248,0.2)] transition-all duration-300 text-sm font-heading font-semibold shrink-0"
+                            id="cert-verify-btn">Verify</button>
                     </div>
                     <p id="cert-result" class="text-xs mt-2 hidden"></p>
                 </div>
@@ -1074,7 +1438,8 @@
         </div>
         <!-- Bottom bar -->
         <div class="border-t border-white/5 py-5">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-3">
+            <div
+                class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-3">
                 <p class="text-gray-700 text-xs">© 2025 AI-THON 2.0 — Department of AI & DS. All rights reserved.</p>
                 <p class="text-gray-700 text-xs">Developed with <span class="text-sky-400">❤</span> and Code</p>
             </div>
@@ -1086,338 +1451,264 @@
     <!--               CINEMATIC ANIMATION ENGINE                  -->
     <!-- ═══════════════════════════════════════════════════════════ -->
     <script>
-    document.addEventListener('DOMContentLoaded', () => {
+        document.addEventListener('DOMContentLoaded', () => {
 
-        // ── Accessibility: respect reduced motion ──
-        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            // ── Accessibility: respect reduced motion ──
+            const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-        gsap.registerPlugin(ScrollTrigger);
+            gsap.registerPlugin(ScrollTrigger);
 
-        // ════════════════════════════════════════════════════
-        //   1. CYBER-DECODE TEXT EFFECT
-        // ════════════════════════════════════════════════════
-        function cyberDecode(element, finalText, opts = {}) {
-            if (prefersReducedMotion) {
-                element.textContent = finalText;
-                element.style.opacity = 1;
-                return;
-            }
-            const duration = opts.duration || 1800;
-            const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789@#$%&*<>/\\|{}[]~';
-            const letters = finalText.split('');
-            let iterations = 0;
-            const totalIterations = Math.ceil(duration / 30);
-
-            element.style.opacity = 1;
-            element.classList.add('decode-cursor');
-
-            const interval = setInterval(() => {
-                element.textContent = letters.map((char, i) => {
-                    if (char === ' ') return ' ';
-                    const lockThreshold = (i / letters.length) * totalIterations;
-                    if (iterations > lockThreshold) return char;
-                    return chars[Math.floor(Math.random() * chars.length)];
-                }).join('');
-
-                iterations++;
-                if (iterations >= totalIterations) {
-                    clearInterval(interval);
-                    element.textContent = finalText;
-                    element.classList.remove('decode-cursor');
-                }
-            }, 30);
-        }
-
-
-        // ════════════════════════════════════════════════════
-        //   2. WORD-BY-WORD REVEAL (subtext & meta)
-        // ════════════════════════════════════════════════════
-        function wrapWords(el) {
-            const text = el.textContent.trim();
-            const words = text.split(/\s+/);
-            el.innerHTML = '';
-            words.forEach((word, i) => {
-                const span = document.createElement('span');
-                span.className = 'word-reveal';
-                span.textContent = word;
-                span.style.transitionDelay = `${i * 0.04}s`;
-                el.appendChild(span);
-                if (i < words.length - 1) {
-                    el.appendChild(document.createTextNode(' '));
-                }
-            });
-            return el.querySelectorAll('.word-reveal');
-        }
-
-
-        // ════════════════════════════════════════════════════
-        //   3. THE VIDEO EDIT SEQUENCE (on-load orchestration)
-        //      Centered cinematic cascade: logo → headline → subtext → stats
-        // ════════════════════════════════════════════════════
-        const masterTimeline = gsap.timeline({ delay: 0.2 });
-
-        if (!prefersReducedMotion) {
-            // Phase 1: Navbar drops down
-            masterTimeline.to('#navbar', {
-                y: 0,
-                duration: 0.6,
-                ease: 'power3.out',
-                clearProps: 'transform',
-                onComplete: () => {
-                    document.getElementById('navbar').classList.remove('nav-init');
-                }
-            });
-
-            // Phase 2: Logo — fade in + subtle scale up (first element to appear)
-            masterTimeline.fromTo('#hero-logo', {
-                opacity: 0,
-                scale: 0.92,
-                y: 20
-            }, {
-                opacity: 1,
-                scale: 1,
-                y: 0,
-                duration: 0.9,
-                ease: 'power2.out'
-            }, '-=0.1');
-
-            // Phase 3: Pre-heading tag + Dept line (+400ms after logo starts)
-            masterTimeline.to('#hero-tag', {
-                opacity: 1,
-                y: 0,
-                duration: 0.5,
-                ease: 'power2.out'
-            }, '-=0.4');
-
-            masterTimeline.to('#hero-dept', {
-                opacity: 1,
-                y: 0,
-                duration: 0.4,
-                ease: 'power2.out'
-            }, '-=0.3');
-
-            // Phase 4: Cyber-decode headline (line 1) — slides up + decodes
-            const line1El = document.getElementById('decode-line1');
-            const line1Text = line1El.textContent.trim();
-            line1El.textContent = '';
-            masterTimeline.fromTo(line1El, {
-                opacity: 0,
-                y: 18
-            }, {
-                opacity: 1,
-                y: 0,
-                duration: 0.4,
-                ease: 'power2.out',
-                onComplete: () => cyberDecode(line1El, line1Text, { duration: 1400 })
-            }, '+=0.1');
-
-            // Phase 5: Cyber-decode headline (line 2) — with gradient flow
-            const line2El = document.getElementById('decode-line2');
-            const line2Text = line2El.textContent.trim();
-            line2El.textContent = '';
-            masterTimeline.fromTo(line2El, {
-                opacity: 0,
-                y: 18
-            }, {
-                opacity: 1,
-                y: 0,
-                duration: 0.4,
-                ease: 'power2.out',
-                onComplete: () => cyberDecode(line2El, line2Text, { duration: 1600 })
-            }, '-=0.8');
-
-            // Phase 6: Subtext — word-by-word (+400ms after headline)
-            const subtextEl = document.getElementById('hero-subtext');
-            const subtextWords = wrapWords(subtextEl);
-            masterTimeline.to(subtextEl, {
-                opacity: 1,
-                y: 0,
-                duration: 0.01
-            }, '+=0.2');
-            masterTimeline.to(subtextWords, {
-                opacity: 1,
-                y: 0,
-                duration: 0.35,
-                stagger: 0.03,
-                ease: 'power2.out'
-            }, '-=0.01');
-
-            // Phase 7: CTAs bloom in
-            masterTimeline.fromTo('#hero-ctas', {
-                opacity: 0,
-                y: 20
-            }, {
-                opacity: 1,
-                y: 0,
-                duration: 0.6,
-                ease: 'power2.out',
-                onStart: () => {
-                    gsap.fromTo('#register-btn', {
-                        boxShadow: '0 0 0px rgba(56,189,248,0)',
-                        scale: 0.95
-                    }, {
-                        boxShadow: '0 0 30px rgba(56,189,248,0.5), 0 0 60px rgba(56,189,248,0.2)',
-                        scale: 1,
-                        duration: 0.8,
-                        ease: 'power2.out'
-                    });
-                }
-            }, '-=0.15');
-
-            // Phase 8: Stats + Meta grid — fade in + counter animation (+400ms)
-            masterTimeline.fromTo('#hero-info-grid', {
-                opacity: 0,
-                y: 24
-            }, {
-                opacity: 1,
-                y: 0,
-                duration: 0.7,
-                ease: 'power2.out',
-                onComplete: () => animateCounters()
-            }, '+=0.1');
-
-            // Phase 9: Meta row
-            masterTimeline.to('#hero-meta', {
-                opacity: 1,
-                y: 0,
-                duration: 0.5,
-                ease: 'power2.out'
-            }, '-=0.4');
-
-        } else {
-            // Reduced motion: just reveal everything
-            document.querySelectorAll('.hero-init, .cascade-init, .nav-init, .glass-bloom').forEach(el => {
-                el.style.opacity = 1;
-                el.style.transform = 'none';
-                el.style.backdropFilter = 'blur(12px)';
-            });
-            animateCounters();
-        }
-
-
-        // ════════════════════════════════════════════════════
-        //   4. COUNTER ANIMATION (stats panel)
-        // ════════════════════════════════════════════════════
-        function animateCounters() {
-            document.querySelectorAll('.counter').forEach(counter => {
-                const target = parseInt(counter.dataset.target);
+            // ════════════════════════════════════════════════════
+            //   1. CYBER-DECODE TEXT EFFECT
+            // ════════════════════════════════════════════════════
+            function cyberDecode(element, finalText, opts = {}) {
                 if (prefersReducedMotion) {
-                    counter.textContent = target + '+';
+                    element.textContent = finalText;
+                    element.style.opacity = 1;
                     return;
                 }
-                gsap.to({ val: 0 }, {
-                    val: target,
-                    duration: 1.5,
-                    ease: 'power2.out',
-                    onUpdate: function () {
-                        counter.textContent = Math.floor(this.targets()[0].val) + '+';
+                const duration = opts.duration || 1800;
+                const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789@#$%&*<>/\\|{}[]~';
+                const letters = finalText.split('');
+                let iterations = 0;
+                const totalIterations = Math.ceil(duration / 30);
+
+                element.style.opacity = 1;
+                element.classList.add('decode-cursor');
+
+                const interval = setInterval(() => {
+                    element.textContent = letters.map((char, i) => {
+                        if (char === ' ') return ' ';
+                        const lockThreshold = (i / letters.length) * totalIterations;
+                        if (iterations > lockThreshold) return char;
+                        return chars[Math.floor(Math.random() * chars.length)];
+                    }).join('');
+
+                    iterations++;
+                    if (iterations >= totalIterations) {
+                        clearInterval(interval);
+                        element.textContent = finalText;
+                        element.classList.remove('decode-cursor');
+                    }
+                }, 30);
+            }
+
+
+            // ════════════════════════════════════════════════════
+            //   2. WORD-BY-WORD REVEAL (subtext & meta)
+            // ════════════════════════════════════════════════════
+            function wrapWords(el) {
+                const text = el.textContent.trim();
+                const words = text.split(/\s+/);
+                el.innerHTML = '';
+                words.forEach((word, i) => {
+                    const span = document.createElement('span');
+                    span.className = 'word-reveal';
+                    span.textContent = word;
+                    span.style.transitionDelay = `${i * 0.04}s`;
+                    el.appendChild(span);
+                    if (i < words.length - 1) {
+                        el.appendChild(document.createTextNode(' '));
                     }
                 });
-            });
-        }
+                return el.querySelectorAll('.word-reveal');
+            }
 
 
-        // ════════════════════════════════════════════════════
-        //   5. ZERO-GRAVITY FLOAT (background orbs)
-        // ════════════════════════════════════════════════════
-        if (!prefersReducedMotion) {
-            document.querySelectorAll('.orb-float').forEach(orb => {
-                const speed = parseFloat(orb.dataset.speed) || 0.5;
-                gsap.to(orb, {
-                    y: `random(-30, 30)`,
-                    x: `random(-15, 15)`,
-                    duration: `random(${4 / speed}, ${8 / speed})`,
-                    ease: 'sine.inOut',
-                    repeat: -1,
-                    yoyo: true,
-                    delay: `random(0, 2)`
+            // ════════════════════════════════════════════════════
+            //   3. THE VIDEO EDIT SEQUENCE (on-load orchestration)
+            //      Centered cinematic cascade: logo → headline → subtext → stats
+            // ════════════════════════════════════════════════════
+            const masterTimeline = gsap.timeline({ delay: 0.2 });
+
+            if (!prefersReducedMotion) {
+                // Phase 1: Navbar drops down
+                masterTimeline.to('#navbar', {
+                    y: 0,
+                    duration: 0.6,
+                    ease: 'power3.out',
+                    clearProps: 'transform',
+                    onComplete: () => {
+                        document.getElementById('navbar').classList.remove('nav-init');
+                    }
                 });
-            });
-        }
 
+                // Phase 2: Logo — fade in + subtle scale up (first element to appear)
+                masterTimeline.fromTo('#hero-logo', {
+                    opacity: 0,
+                    scale: 0.92,
+                    y: 20
+                }, {
+                    opacity: 1,
+                    scale: 1,
+                    y: 0,
+                    duration: 0.9,
+                    ease: 'power2.out'
+                }, '-=0.1');
 
-        // ════════════════════════════════════════════════════
-        //   6. SCROLL-TRIGGERED DOMAIN CARDS (3D perspective)
-        // ════════════════════════════════════════════════════
-        if (!prefersReducedMotion) {
-            // Section header reveal
-            gsap.from('#domains-header', {
-                scrollTrigger: {
-                    trigger: '#domains-header',
-                    start: 'top 85%',
-                    toggleActions: 'play none none none'
-                },
-                opacity: 0,
-                y: 40,
-                duration: 0.8,
-                ease: 'power2.out'
-            });
+                // Phase 3: Pre-heading tag + Dept line (+400ms after logo starts)
+                masterTimeline.to('#hero-tag', {
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.5,
+                    ease: 'power2.out'
+                }, '-=0.4');
 
-            // Cards: 3D perspective scale-up
-            gsap.from('.domain-card', {
-                scrollTrigger: {
-                    trigger: '#domains-grid',
-                    start: 'top 80%',
-                    toggleActions: 'play none none none'
-                },
-                opacity: 0,
-                y: 60,
-                scale: 0.9,
-                rotateX: 10,
-                transformOrigin: 'center bottom',
-                duration: 0.7,
-                stagger: 0.1,
-                ease: 'power3.out'
-            });
+                masterTimeline.to('#hero-dept', {
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.4,
+                    ease: 'power2.out'
+                }, '-=0.3');
 
-            // Metrics bar
-            gsap.from('.metric-item', {
-                scrollTrigger: {
-                    trigger: '#metrics-bar',
-                    start: 'top 90%',
-                    toggleActions: 'play none none none'
-                },
-                opacity: 0,
-                y: 20,
-                duration: 0.5,
-                stagger: 0.1,
-                ease: 'power2.out'
-            });
-        }
+                // Phase 4: Cyber-decode headline (line 1) — slides up + decodes
+                const line1El = document.getElementById('decode-line1');
+                const line1Text = line1El.textContent.trim();
+                line1El.textContent = '';
+                masterTimeline.fromTo(line1El, {
+                    opacity: 0,
+                    y: 18
+                }, {
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.4,
+                    ease: 'power2.out',
+                    onComplete: () => cyberDecode(line1El, line1Text, { duration: 1400 })
+                }, '+=0.1');
 
+                // Phase 5: Cyber-decode headline (line 2) — with gradient flow
+                const line2El = document.getElementById('decode-line2');
+                const line2Text = line2El.textContent.trim();
+                line2El.textContent = '';
+                masterTimeline.fromTo(line2El, {
+                    opacity: 0,
+                    y: 18
+                }, {
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.4,
+                    ease: 'power2.out',
+                    onComplete: () => cyberDecode(line2El, line2Text, { duration: 1600 })
+                }, '-=0.8');
 
-        // ════════════════════════════════════════════════════
-        //   7. 3D TILT EFFECT ON DOMAIN CARDS
-        // ════════════════════════════════════════════════════
-        if (!prefersReducedMotion) {
-            document.querySelectorAll('.tilt-card').forEach(card => {
-                card.addEventListener('mousemove', (e) => {
-                    const rect = card.getBoundingClientRect();
-                    const x = e.clientX - rect.left;
-                    const y = e.clientY - rect.top;
-                    const centerX = rect.width / 2;
-                    const centerY = rect.height / 2;
-                    const rotateX = ((y - centerY) / centerY) * -8;
-                    const rotateY = ((x - centerX) / centerX) * 8;
-                    card.style.transform = `perspective(800px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-8px)`;
+                // Phase 6: Subtext — word-by-word (+400ms after headline)
+                const subtextEl = document.getElementById('hero-subtext');
+                const subtextWords = wrapWords(subtextEl);
+                masterTimeline.to(subtextEl, {
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.01
+                }, '+=0.2');
+                masterTimeline.to(subtextWords, {
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.35,
+                    stagger: 0.03,
+                    ease: 'power2.out'
+                }, '-=0.01');
+
+                // Phase 7: CTAs bloom in
+                masterTimeline.fromTo('#hero-ctas', {
+                    opacity: 0,
+                    y: 20
+                }, {
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.6,
+                    ease: 'power2.out',
+                    onStart: () => {
+                        gsap.fromTo('#register-btn', {
+                            boxShadow: '0 0 0px rgba(56,189,248,0)',
+                            scale: 0.95
+                        }, {
+                            boxShadow: '0 0 30px rgba(56,189,248,0.5), 0 0 60px rgba(56,189,248,0.2)',
+                            scale: 1,
+                            duration: 0.8,
+                            ease: 'power2.out'
+                        });
+                    }
+                }, '-=0.15');
+
+                // Phase 8: Stats + Meta grid — fade in + counter animation (+400ms)
+                masterTimeline.fromTo('#hero-info-grid', {
+                    opacity: 0,
+                    y: 24
+                }, {
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.7,
+                    ease: 'power2.out',
+                    onComplete: () => animateCounters()
+                }, '+=0.1');
+
+                // Phase 9: Meta row
+                masterTimeline.to('#hero-meta', {
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.5,
+                    ease: 'power2.out'
+                }, '-=0.4');
+
+            } else {
+                // Reduced motion: just reveal everything
+                document.querySelectorAll('.hero-init, .cascade-init, .nav-init, .glass-bloom').forEach(el => {
+                    el.style.opacity = 1;
+                    el.style.transform = 'none';
+                    el.style.backdropFilter = 'blur(12px)';
                 });
-                card.addEventListener('mouseleave', () => {
-                    card.style.transform = 'perspective(800px) rotateX(0) rotateY(0) translateY(0)';
+                animateCounters();
+            }
+
+
+            // ════════════════════════════════════════════════════
+            //   4. COUNTER ANIMATION (stats panel)
+            // ════════════════════════════════════════════════════
+            function animateCounters() {
+                document.querySelectorAll('.counter').forEach(counter => {
+                    const target = parseInt(counter.dataset.target);
+                    if (prefersReducedMotion) {
+                        counter.textContent = target + '+';
+                        return;
+                    }
+                    gsap.to({ val: 0 }, {
+                        val: target,
+                        duration: 1.5,
+                        ease: 'power2.out',
+                        onUpdate: function () {
+                            counter.textContent = Math.floor(this.targets()[0].val) + '+';
+                        }
+                    });
                 });
-            });
-        }
+            }
 
 
-        // ════════════════════════════════════════════════════
-        //   8. JOURNEY TIMELINE: SELF-DRAWING LINE + NODE PULSES
-        // ════════════════════════════════════════════════════
-        if (!prefersReducedMotion) {
-            const journeyDesktop = document.getElementById('journey-desktop');
-            if (journeyDesktop) {
-                // Header reveal
-                gsap.from('#journey-header', {
+            // ════════════════════════════════════════════════════
+            //   5. ZERO-GRAVITY FLOAT (background orbs)
+            // ════════════════════════════════════════════════════
+            if (!prefersReducedMotion) {
+                document.querySelectorAll('.orb-float').forEach(orb => {
+                    const speed = parseFloat(orb.dataset.speed) || 0.5;
+                    gsap.to(orb, {
+                        y: `random(-30, 30)`,
+                        x: `random(-15, 15)`,
+                        duration: `random(${4 / speed}, ${8 / speed})`,
+                        ease: 'sine.inOut',
+                        repeat: -1,
+                        yoyo: true,
+                        delay: `random(0, 2)`
+                    });
+                });
+            }
+
+
+            // ════════════════════════════════════════════════════
+            //   6. SCROLL-TRIGGERED DOMAIN CARDS (3D perspective)
+            // ════════════════════════════════════════════════════
+            if (!prefersReducedMotion) {
+                // Section header reveal
+                gsap.from('#domains-header', {
                     scrollTrigger: {
-                        trigger: '#journey-header',
+                        trigger: '#domains-header',
                         start: 'top 85%',
                         toggleActions: 'play none none none'
                     },
@@ -1427,208 +1718,282 @@
                     ease: 'power2.out'
                 });
 
-                const lineFill = document.getElementById('journey-line-fill');
-                const steps = document.querySelectorAll('.journey-step');
-                const nodes = document.querySelectorAll('.journey-step .step-node:not(.step-active-permanent)');
-
-                // Step cards: stagger fade in
-                gsap.from('.journey-step', {
+                // Cards: 3D perspective scale-up
+                gsap.from('.domain-card', {
                     scrollTrigger: {
-                        trigger: '#journey-desktop',
+                        trigger: '#domains-grid',
                         start: 'top 80%',
                         toggleActions: 'play none none none'
                     },
                     opacity: 0,
-                    y: 30,
+                    y: 60,
+                    scale: 0.9,
+                    rotateX: 10,
+                    transformOrigin: 'center bottom',
+                    duration: 0.7,
+                    stagger: 0.1,
+                    ease: 'power3.out'
+                });
+
+                // Metrics bar
+                gsap.from('.metric-item', {
+                    scrollTrigger: {
+                        trigger: '#metrics-bar',
+                        start: 'top 90%',
+                        toggleActions: 'play none none none'
+                    },
+                    opacity: 0,
+                    y: 20,
+                    duration: 0.5,
+                    stagger: 0.1,
+                    ease: 'power2.out'
+                });
+            }
+
+
+            // ════════════════════════════════════════════════════
+            //   7. 3D TILT EFFECT ON DOMAIN CARDS
+            // ════════════════════════════════════════════════════
+            if (!prefersReducedMotion) {
+                document.querySelectorAll('.tilt-card').forEach(card => {
+                    card.addEventListener('mousemove', (e) => {
+                        const rect = card.getBoundingClientRect();
+                        const x = e.clientX - rect.left;
+                        const y = e.clientY - rect.top;
+                        const centerX = rect.width / 2;
+                        const centerY = rect.height / 2;
+                        const rotateX = ((y - centerY) / centerY) * -8;
+                        const rotateY = ((x - centerX) / centerX) * 8;
+                        card.style.transform = `perspective(800px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-8px)`;
+                    });
+                    card.addEventListener('mouseleave', () => {
+                        card.style.transform = 'perspective(800px) rotateX(0) rotateY(0) translateY(0)';
+                    });
+                });
+            }
+
+
+            // ════════════════════════════════════════════════════
+            //   8. JOURNEY TIMELINE: SELF-DRAWING LINE + NODE PULSES
+            // ════════════════════════════════════════════════════
+            if (!prefersReducedMotion) {
+                const journeyDesktop = document.getElementById('journey-desktop');
+                if (journeyDesktop) {
+                    // Header reveal
+                    gsap.from('#journey-header', {
+                        scrollTrigger: {
+                            trigger: '#journey-header',
+                            start: 'top 85%',
+                            toggleActions: 'play none none none'
+                        },
+                        opacity: 0,
+                        y: 40,
+                        duration: 0.8,
+                        ease: 'power2.out'
+                    });
+
+                    const lineFill = document.getElementById('journey-line-fill');
+                    const steps = document.querySelectorAll('.journey-step');
+                    const nodes = document.querySelectorAll('.journey-step .step-node:not(.step-active-permanent)');
+
+                    // Step cards: stagger fade in
+                    gsap.from('.journey-step', {
+                        scrollTrigger: {
+                            trigger: '#journey-desktop',
+                            start: 'top 80%',
+                            toggleActions: 'play none none none'
+                        },
+                        opacity: 0,
+                        y: 30,
+                        duration: 0.5,
+                        stagger: 0.08,
+                        ease: 'power2.out'
+                    });
+
+                    // Line drawing + node pulse
+                    ScrollTrigger.create({
+                        trigger: '#journey-desktop',
+                        start: 'top 70%',
+                        end: 'bottom 60%',
+                        scrub: 0.8,
+                        onUpdate: (self) => {
+                            const progress = self.progress;
+                            lineFill.style.width = `${progress * 100}%`;
+
+                            // Light up nodes sequentially as line reaches them
+                            const totalSteps = nodes.length;
+                            nodes.forEach((node, i) => {
+                                const threshold = (i + 0.5) / (totalSteps + 1);
+                                if (progress >= threshold) {
+                                    node.classList.add('lit');
+                                } else {
+                                    node.classList.remove('lit');
+                                }
+                            });
+                        }
+                    });
+                }
+
+                // Mobile journey steps
+                gsap.from('.journey-step-mobile', {
+                    scrollTrigger: {
+                        trigger: '#journey-mobile',
+                        start: 'top 80%',
+                        toggleActions: 'play none none none'
+                    },
+                    opacity: 0,
+                    x: -30,
                     duration: 0.5,
                     stagger: 0.08,
                     ease: 'power2.out'
                 });
+            }
 
-                // Line drawing + node pulse
-                ScrollTrigger.create({
-                    trigger: '#journey-desktop',
-                    start: 'top 70%',
-                    end: 'bottom 60%',
-                    scrub: 0.8,
-                    onUpdate: (self) => {
-                        const progress = self.progress;
-                        lineFill.style.width = `${progress * 100}%`;
 
-                        // Light up nodes sequentially as line reaches them
-                        const totalSteps = nodes.length;
-                        nodes.forEach((node, i) => {
-                            const threshold = (i + 0.5) / (totalSteps + 1);
-                            if (progress >= threshold) {
-                                node.classList.add('lit');
-                            } else {
-                                node.classList.remove('lit');
-                            }
+            // ════════════════════════════════════════════════════
+            //   9. PERKS: GLASSMORPHISM BLOOM (scroll-triggered)
+            // ════════════════════════════════════════════════════
+            if (!prefersReducedMotion) {
+                gsap.to('.perk-card', {
+                    scrollTrigger: {
+                        trigger: '#perks-grid',
+                        start: 'top 85%',
+                        toggleActions: 'play none none none'
+                    },
+                    opacity: 1,
+                    backdropFilter: 'blur(12px)',
+                    webkitBackdropFilter: 'blur(12px)',
+                    y: 0,
+                    duration: 0.6,
+                    stagger: 0.12,
+                    ease: 'power2.out',
+                    onStart: function () {
+                        // Also animate from y offset
+                        gsap.from('.perk-card', {
+                            y: 30,
+                            duration: 0.6,
+                            stagger: 0.12,
+                            ease: 'power2.out'
                         });
                     }
                 });
+            } else {
+                document.querySelectorAll('.perk-card').forEach(el => {
+                    el.style.opacity = 1;
+                    el.style.backdropFilter = 'blur(12px)';
+                });
             }
 
-            // Mobile journey steps
-            gsap.from('.journey-step-mobile', {
-                scrollTrigger: {
-                    trigger: '#journey-mobile',
-                    start: 'top 80%',
-                    toggleActions: 'play none none none'
-                },
-                opacity: 0,
-                x: -30,
-                duration: 0.5,
-                stagger: 0.08,
-                ease: 'power2.out'
-            });
-        }
 
+            // ════════════════════════════════════════════════════
+            //  10. MAGNETIC BUTTON EFFECT
+            // ════════════════════════════════════════════════════
+            if (!prefersReducedMotion) {
+                const magneticBtn = document.getElementById('register-btn');
+                if (magneticBtn) {
+                    magneticBtn.addEventListener('mousemove', (e) => {
+                        const rect = magneticBtn.getBoundingClientRect();
+                        const x = e.clientX - rect.left;
+                        const y = e.clientY - rect.top;
+                        const centerX = rect.width / 2;
+                        const centerY = rect.height / 2;
+                        const moveX = ((x - centerX) / centerX) * 6;
+                        const moveY = ((y - centerY) / centerY) * 4;
 
-        // ════════════════════════════════════════════════════
-        //   9. PERKS: GLASSMORPHISM BLOOM (scroll-triggered)
-        // ════════════════════════════════════════════════════
-        if (!prefersReducedMotion) {
-            gsap.to('.perk-card', {
-                scrollTrigger: {
-                    trigger: '#perks-grid',
-                    start: 'top 85%',
-                    toggleActions: 'play none none none'
-                },
-                opacity: 1,
-                backdropFilter: 'blur(12px)',
-                webkitBackdropFilter: 'blur(12px)',
-                y: 0,
-                duration: 0.6,
-                stagger: 0.12,
-                ease: 'power2.out',
-                onStart: function () {
-                    // Also animate from y offset
-                    gsap.from('.perk-card', {
-                        y: 30,
-                        duration: 0.6,
-                        stagger: 0.12,
-                        ease: 'power2.out'
+                        magneticBtn.style.transform = `translate(${moveX}px, ${moveY}px) scale(1.03)`;
+
+                        // Update glow position
+                        const glowX = (x / rect.width) * 100;
+                        const glowY = (y / rect.height) * 100;
+                        magneticBtn.style.setProperty('--glow-x', `${glowX}%`);
+                        magneticBtn.style.setProperty('--glow-y', `${glowY}%`);
+                    });
+
+                    magneticBtn.addEventListener('mouseleave', () => {
+                        gsap.to(magneticBtn, {
+                            x: 0,
+                            y: 0,
+                            scale: 1,
+                            duration: 0.4,
+                            ease: 'elastic.out(1, 0.5)',
+                            clearProps: 'transform'
+                        });
                     });
                 }
+            }
+
+
+            // ════════════════════════════════════════════════════
+            //  11. MOBILE MENU
+            // ════════════════════════════════════════════════════
+            const menuToggle = document.getElementById('menu-toggle');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const bar1 = document.getElementById('bar1');
+            const bar2 = document.getElementById('bar2');
+            const bar3 = document.getElementById('bar3');
+            let menuOpen = false;
+
+            menuToggle.addEventListener('click', () => {
+                menuOpen = !menuOpen;
+                mobileMenu.classList.toggle('open');
+                if (menuOpen) {
+                    bar1.style.transform = 'rotate(45deg) translate(4px, 4px)';
+                    bar2.style.opacity = '0';
+                    bar3.style.transform = 'rotate(-45deg) translate(4px, -4px)';
+                } else {
+                    bar1.style.transform = '';
+                    bar2.style.opacity = '1';
+                    bar3.style.transform = '';
+                }
             });
-        } else {
-            document.querySelectorAll('.perk-card').forEach(el => {
-                el.style.opacity = 1;
-                el.style.backdropFilter = 'blur(12px)';
-            });
-        }
 
-
-        // ════════════════════════════════════════════════════
-        //  10. MAGNETIC BUTTON EFFECT
-        // ════════════════════════════════════════════════════
-        if (!prefersReducedMotion) {
-            const magneticBtn = document.getElementById('register-btn');
-            if (magneticBtn) {
-                magneticBtn.addEventListener('mousemove', (e) => {
-                    const rect = magneticBtn.getBoundingClientRect();
-                    const x = e.clientX - rect.left;
-                    const y = e.clientY - rect.top;
-                    const centerX = rect.width / 2;
-                    const centerY = rect.height / 2;
-                    const moveX = ((x - centerX) / centerX) * 6;
-                    const moveY = ((y - centerY) / centerY) * 4;
-
-                    magneticBtn.style.transform = `translate(${moveX}px, ${moveY}px) scale(1.03)`;
-
-                    // Update glow position
-                    const glowX = (x / rect.width) * 100;
-                    const glowY = (y / rect.height) * 100;
-                    magneticBtn.style.setProperty('--glow-x', `${glowX}%`);
-                    magneticBtn.style.setProperty('--glow-y', `${glowY}%`);
+            mobileMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.remove('open');
+                    menuOpen = false;
+                    bar1.style.transform = '';
+                    bar2.style.opacity = '1';
+                    bar3.style.transform = '';
                 });
-
-                magneticBtn.addEventListener('mouseleave', () => {
-                    gsap.to(magneticBtn, {
-                        x: 0,
-                        y: 0,
-                        scale: 1,
-                        duration: 0.4,
-                        ease: 'elastic.out(1, 0.5)',
-                        clearProps: 'transform'
-                    });
-                });
-            }
-        }
-
-
-        // ════════════════════════════════════════════════════
-        //  11. MOBILE MENU
-        // ════════════════════════════════════════════════════
-        const menuToggle = document.getElementById('menu-toggle');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const bar1 = document.getElementById('bar1');
-        const bar2 = document.getElementById('bar2');
-        const bar3 = document.getElementById('bar3');
-        let menuOpen = false;
-
-        menuToggle.addEventListener('click', () => {
-            menuOpen = !menuOpen;
-            mobileMenu.classList.toggle('open');
-            if (menuOpen) {
-                bar1.style.transform = 'rotate(45deg) translate(4px, 4px)';
-                bar2.style.opacity = '0';
-                bar3.style.transform = 'rotate(-45deg) translate(4px, -4px)';
-            } else {
-                bar1.style.transform = '';
-                bar2.style.opacity = '1';
-                bar3.style.transform = '';
-            }
-        });
-
-        mobileMenu.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.remove('open');
-                menuOpen = false;
-                bar1.style.transform = '';
-                bar2.style.opacity = '1';
-                bar3.style.transform = '';
             });
+
+            // ── Navbar scroll solidify ──
+            const navbar = document.getElementById('navbar');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    navbar.style.borderBottomColor = 'rgba(56, 189, 248, 0.15)';
+                    navbar.style.background = 'rgba(3, 7, 18, 0.92)';
+                } else {
+                    navbar.style.borderBottomColor = 'rgba(56, 189, 248, 0.1)';
+                    navbar.style.background = '';
+                }
+            });
+
+
+            // ════════════════════════════════════════════════════
+            //  12. CERTIFICATE VERIFICATION (mock)
+            // ════════════════════════════════════════════════════
+            const certInput = document.getElementById('cert-input');
+            const certBtn = document.getElementById('cert-verify-btn');
+            const certResult = document.getElementById('cert-result');
+
+            certBtn.addEventListener('click', () => {
+                const val = certInput.value.trim();
+                certResult.classList.remove('hidden');
+                if (!val) {
+                    certResult.className = 'text-xs mt-2 text-yellow-400';
+                    certResult.textContent = '⚠ Please enter a certificate ID.';
+                } else if (val.startsWith('AITH-')) {
+                    certResult.className = 'text-xs mt-2 text-green-400';
+                    certResult.textContent = '✓ Certificate verified successfully!';
+                } else {
+                    certResult.className = 'text-xs mt-2 text-red-400';
+                    certResult.textContent = '✗ Invalid certificate ID. Please check and try again.';
+                }
+            });
+            certInput.addEventListener('keydown', (e) => { if (e.key === 'Enter') certBtn.click(); });
+
         });
-
-        // ── Navbar scroll solidify ──
-        const navbar = document.getElementById('navbar');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                navbar.style.borderBottomColor = 'rgba(56, 189, 248, 0.15)';
-                navbar.style.background = 'rgba(3, 7, 18, 0.92)';
-            } else {
-                navbar.style.borderBottomColor = 'rgba(56, 189, 248, 0.1)';
-                navbar.style.background = '';
-            }
-        });
-
-
-        // ════════════════════════════════════════════════════
-        //  12. CERTIFICATE VERIFICATION (mock)
-        // ════════════════════════════════════════════════════
-        const certInput = document.getElementById('cert-input');
-        const certBtn = document.getElementById('cert-verify-btn');
-        const certResult = document.getElementById('cert-result');
-
-        certBtn.addEventListener('click', () => {
-            const val = certInput.value.trim();
-            certResult.classList.remove('hidden');
-            if (!val) {
-                certResult.className = 'text-xs mt-2 text-yellow-400';
-                certResult.textContent = '⚠ Please enter a certificate ID.';
-            } else if (val.startsWith('AITH-')) {
-                certResult.className = 'text-xs mt-2 text-green-400';
-                certResult.textContent = '✓ Certificate verified successfully!';
-            } else {
-                certResult.className = 'text-xs mt-2 text-red-400';
-                certResult.textContent = '✗ Invalid certificate ID. Please check and try again.';
-            }
-        });
-        certInput.addEventListener('keydown', (e) => { if (e.key === 'Enter') certBtn.click(); });
-
-    });
     </script>
 
 </body>
